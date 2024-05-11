@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.main{
+    text-align: center;
+}
+
+#logo_img{
+    padding: 10px 650px;
+    margin-left: 100px;
+}
+
+#imsi_img{
+    margin-top: 70px;
+}
+
+.menu{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+.menu li{
+    float: left;
+    list-style-type: none;
+}
+button{
+    margin: 50px 30px;
+    width: 400px;
+    height: 50px;
+    font-size: 20px;
+}
+
+
+footer {                         
+    background-color: #E3E3E3;
+    color: #515151;
+    height: 15vh;
+    line-height: 8px;
+
+}
+address{
+    text-align: left;
+    padding-left: 500px;
+    padding-top: 30px;
+}
+address p{
+    font-size: 18px;
+    line-height: 30px;
+  }
