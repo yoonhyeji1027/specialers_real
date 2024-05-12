@@ -2,8 +2,10 @@
     margin: 0;
     padding: 0;
 }
-.main{
+.header{
     text-align: center;
+    margin-left: 70px;
+    margin-top: 10px;
 }
 
 #logo_img{
@@ -14,37 +16,47 @@
 #imsi_img{
     margin-top: 70px;
 }
+#x{
+    margin-top: 0px;
+    margin-left: 1220px;
+    margin-right: 0px;
+    font-size: 25px;
+}
+#ov_text {
+    margin-top: -580px;
+    margin-left: 800px;
+}
 
 .menu{
     list-style: none;
     display: flex;
     justify-content: center;
 }
-.menu li{
+.menu ul li{
     float: left;
     list-style-type: none;
 }
-button{
+#menu_bt button{
     margin: 50px 30px;
     width: 400px;
     height: 50px;
     font-size: 20px;
+    border: 1px solid ;
 }
 
 
 footer {                         
     background-color: #E3E3E3;
-    color: #515151;
     height: 15vh;
     line-height: 8px;
 
 }
 address{
     text-align: left;
-    padding-left: 500px;
+    padding-left: 750px;
     padding-top: 30px;
 }
 address p{
     font-size: 18px;
-    line-height: 30px;
+    line-height: 5px;
   }
