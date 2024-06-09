@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
-import MainPage  from "./pages/MainPage";
-import S_info from "./pages/S_info";
-import Salmon from "./pages/Salmon";
-import P_info from "./pages/P_info";
-import Inquiry from "./pages/Inquiry";
+import MainPage  from "./pages/MainPage.js";
+import S_info from "./pages/S_info.js";
+import Salmon from "./pages/Salmon.js";
+import P_info from "./pages/P_info.js";
+import Inquiry from "./pages/Inquiry.js";
 
 
 function Routing() {

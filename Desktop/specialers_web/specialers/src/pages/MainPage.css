@@ -2,6 +2,17 @@
     margin: 0;
     padding: 0;
 }
+@media screen and (max-width: 765px) and (min-width: 300px) {
+    .table-container{
+        width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    table{
+        width:100%;
+    }
+}
 .header{
     text-align: center;
     margin-left: 70px;
@@ -13,9 +24,216 @@
     margin-left: 100px;
 }
 
-#imsi_img{
+#Main_image{
     margin-top: 70px;
+    position: relative;
 }
+.image_m_1{
+    position:absolute;
+    top: 40%;
+    right: 70%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: red;
+}
+.image_m_2{
+    position:absolute;
+    top: 37%;
+    right: 65%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: red;
+}
+.image_m_3{
+    position:absolute;
+    top: 35%;
+    right: 50%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: red;
+}
+
+.image_m1_1{
+    position:absolute;
+    top: 60%;
+    right: 25%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: red;
+}
+.image_m1_2{
+    position:absolute;
+    top: 50%;
+    right: 43%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: red;
+}
+.image_m1_3{
+    position:absolute;
+    top: 30%;
+    right: 32%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: red;
+}
+.image_m1_4{
+    position:absolute;
+    top: 37%;
+    right: 67%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: red;
+}
+.image_m1_5{
+    position:absolute;
+    top: 32%;
+    right: 59%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: red;
+}
+.image_m1_6{
+    position:absolute;
+    top: 42%;
+    right: 75%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: red;
+}
+.image_m2_1{
+    position:absolute;
+    top: 55%;
+    right: 53%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: red;
+}
+.image_m2_2{
+    position:absolute;
+    top: 45%;
+    right: 48%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: red;
+}
+.image_m2_3{
+    position:absolute;
+    top: 35%;
+    right: 43%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: red;
+}
+.image_m3_1{
+    position:absolute;
+    top: 55%;
+    right: 53%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: red;
+}
+.image_m3_2{
+    position:absolute;
+    top: 45%;
+    right: 48%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: red;
+}
+.image_m3_3{
+    position:absolute;
+    top: 35%;
+    right: 43%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: red;
+}
+.image_m4_1{
+    position:absolute;
+    top: 40%;
+    right: 67%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: red;
+}
+.image_m4_2{
+    position:absolute;
+    top: 35%;
+    right: 59%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: red;
+}
+.image_m4_3{
+    position:absolute;
+    top: 45%;
+    right: 75%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: red;
+}
+.image_m5_1{
+    position:absolute;
+    top: 43%;
+    right: 67%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: red;
+}
+.image_m5_2{
+    position:absolute;
+    top: 38%;
+    right: 59%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: red;
+}
+.image_m5_3{
+    position:absolute;
+    top: 48%;
+    right: 75%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: red;
+}
+
+.image_x{
+    position: absolute;
+    top: 62%;
+    right: 82.5%;
+    width: 30px;
+    height: 30px;
+    font-size: 30px;
+    color:black;
+    background-color: transparent;
+}
+.over_view p{
+    text-align: left;
+    margin-left: 300px;
+}
+
 #x{
     margin-top: 0px;
     margin-left: 1220px;
