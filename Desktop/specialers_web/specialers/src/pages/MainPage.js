@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import "./MainPage.css";
@@ -7,10 +6,20 @@ import LineGraph from './LineGraph.jsx'
 
 export default function MainPage() {
   const [isOpen, setIsOpen] = useState(false);
+  const [showMessage, setShowMessage] = useState(false);
 
   const openModal = () => {
     setIsOpen(true);
+    setShowMessage(false);
+  
+    setTimeout(() => {
+      setIsOpen(false);
+      setTimeout(() => {
+        alert("현재 실시간 데이터 및 영상을 30초 동안 조회할 수 있습니다. 더 자세한 데이터를 원하신다면 고객문의에서 문의해주시길 바랍니다.");
+      }, 300); //0.3초
+    }, 30000);
   };
+  
 
   const closeModal = () => {
     setIsOpen(false);
