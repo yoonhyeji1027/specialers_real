@@ -64,7 +64,22 @@ app.get('/tanks', (req, res) => {
   );
 });
 
-
 app.listen(port, host, () => {
   console.log(`서버 시작: http://localhost:${port}/tanks`);
 });
+
+
+//실시간 영상
+Stream = require('node-rtsp-stream')
+stream = new Stream({
+  name: 'name',
+  streamUrl: 'rtsp://184.72.239.149/vod/mp4:BigBuckBunny_115k.mov',
+  wsPort: 9999,
+  ffmpegOptions: { // options ffmpeg flags
+    '-stats': '', // an option with no neccessary value uses a blank string
+    '-r': 30 // options with required values specify the value after the key
+  }
+})
+
+
+
