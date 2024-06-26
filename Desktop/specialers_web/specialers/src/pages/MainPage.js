@@ -1,31 +1,40 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import "./MainPage.css";
 import Modal from "react-modal";
 import LineGraph from './LineGraph.jsx';
-import DashPlayer from './DashPlayer.js'; // 추가
+import DashPlayer from './DashPlayer.js';
 
 export default function MainPage() {
   const [isOpen, setIsOpen] = useState(false);
-  const [showMessage, setShowMessage] = useState(false);
+  const modalTimeoutId = useRef(null); // 첫 번째 timeoutId 저장
+  const alertTimeoutId = useRef(null); // 두 번째 timeoutId 저장
 
   const openModal = () => {
     setIsOpen(true);
-    setShowMessage(false);
-  
-    setTimeout(() => {
+
+    // 모달이 열리면 30초 후에 자동으로 닫히도록 타이머 설정
+    modalTimeoutId.current = setTimeout(() => {
       setIsOpen(false);
-      setTimeout(() => {
-        alert("현재 실시간 데이터 및 영상을 30초 동안 조회할 수 있습니다. 더 자세한 데이터를 원하신다면 고객문의에서 문의해주시길 바랍니다.");
-      }, 300); //0.3초
-    }, 30000);
+    }, 30000); // 30초
+
+    // 모달이 열리면 alert가 30초 후에 실행되도록 타이머 설정
+    alertTimeoutId.current = setTimeout(() => {
+      alert("현재 실시간 데이터 및 영상을 30초 동안 조회할 수 있습니다. 더 자세한 데이터를 원하신다면 고객문의에서 문의해주시길 바랍니다.");
+    }, 30300); // 30.3초
   };
-  
 
   const closeModal = () => {
     setIsOpen(false);
+    if (modalTimeoutId.current) {
+      clearTimeout(modalTimeoutId.current);
+      modalTimeoutId.current = null;
+    }
+    if (alertTimeoutId.current) {
+      clearTimeout(alertTimeoutId.current);
+      alertTimeoutId.current = null;
+    }
   };
-
   const customStyles = {
     overlay: {
       backgroundColor: "rgba(0, 0, 0, 0.5)",
@@ -262,7 +271,7 @@ export default function MainPage() {
 
       <div className='over_view'>
         <img id='Main_image' src={currentImage} width='1300px' height='600px' />
-        <button className='image_x' onClick={handleResetImage}>x</button>
+        <button className='image_x' onClick={handleResetImage}>*</button>
         <p>※ 수조 데이터를 실시간으로 조회하고 싶다면 고객문의로 문의 바랍니다.</p>
         <div className='circle_buttons'>
           {buttonState.img_bt11 !== 'hidden' && (
