@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import "./Salmon.css";
-import PieGraph from './PieGraph.jsx'
-import LineGraph from './LineGraph.jsx'
-import BarGraph from './BarGraph.jsx'
+import PieGraph from './PieGraph.jsx';
+import LineGraph from './LineGraph.jsx';
+import BarGraph from './BarGraph.jsx';
+import DashPlayer from './DashPlayer.js';
 
 export default function Salmon() {
 
@@ -143,27 +144,21 @@ export default function Salmon() {
 
       <div className='sujo'> {/*수조 데이터 묶음 따로 그래프 묶음 따로 */}
         <div className='sujo_data'> {/*각 데이터별 묶음 */}
-          <video width="823px" height="768px" controls="controls">
-            <source src="images/kkung1.mp4" type='video/mp4'></source>
-          </video>
+        <DashPlayer url="https://dash.akamaized.net/akamai/bbb_30fps/bbb_30fps.mpd" />
           <div id='sujo_text'>
             <h3 style={{ color: '#4D606B' }}>01_실시간 CCTV</h3>
             <p style={{ color: '#515151' }}>연어 양식장 관리를 하고있는 곳 입니다.<br />24시간동안 작동하며 연어의 생태를 보다 더 자세하게<br />관찰하기 위해 관리하고 있습니다.<br />실시간으로 계속 작동하고 있습니다.</p>
           </div>
         </div>
         <div className='sujo_data'>
-          <video width="823px" height="768px" controls="controls">
-            <source src="images/kkung2.mp4" type='video/mp4'></source>
-          </video>
+        <DashPlayer url="https://dash.akamaized.net/akamai/bbb_30fps/bbb_30fps.mpd" />
           <div id='sujo_text'>
             <h3 style={{ color: '#4D606B' }}>02_실시간 수조영상</h3>
             <p style={{ color: '#515151' }}>연어 양식장 관리를 하고있는 곳 입니다.<br />24시간동안 작동하며 연어의 생태를 보다 더 자세하게<br />관찰하기 위해 관리하고 있습니다.<br />실시간으로 계속 작동하고 있습니다.</p>
           </div>
         </div>
         <div className='sujo_data'>
-          <video width="823px" height="768px" controls="controls">
-            <source src="images/kkung3.mp4" type='video/mp4'></source>
-          </video>
+        <DashPlayer url="https://dash.akamaized.net/akamai/bbb_30fps/bbb_30fps.mpd" />
           <div id='sujo_text'>
             <h3 style={{ color: '#4D606B' }}>03_실시간 수조이미지</h3>
             <p style={{ color: '#515151' }}>연어 양식장 관리를 하고있는 곳 입니다.<br />24시간동안 작동하며 연어의 생태를 보다 더 자세하게<br />관찰하기 위해 관리하고 있습니다.<br />실시간으로 계속 작동하고 있습니다.</p>
