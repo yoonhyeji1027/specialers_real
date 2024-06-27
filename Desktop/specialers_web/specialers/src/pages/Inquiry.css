@@ -18,9 +18,12 @@ p{margin-top: 20px; margin-bottom: 20px;}
     padding: 50px 270px;
     margin-top: -10px;
 }
+.Inquiry hr{
+    width: 1135px;
+}
 .inquiry_h{
     text-align: left;
-    
+    width: 900px;
 }
 .text_box{
     padding: 0px 0.5px;
@@ -59,15 +62,12 @@ select{
     width: 1340px;
 }
 
-.button{
-    padding: 50px 0px;
 
-}
-button{
+#inquiry_bt{
     width: 100px;
     height: 40px;
     font-size: 18px;
-    margin-left: 72%;
+    margin-left: 1000px;
     margin-top: 80px;
     border: none;
     background-color: #FFF;
@@ -79,14 +79,14 @@ footer {
     background-color: #E3E3E3;
     height: 15vh;
     line-height: 8px;
-
+    width: 1879px;
 }
 address{
     text-align: left;
-    padding-left: 750px;
+    width: 1125px;
     padding-top: 30px;
 }
 address p{
     font-size: 18px;
-    line-height: 10px;
+    line-height: 5px;
   }

@@ -21,17 +21,21 @@
 
 #logo_img{
     padding: 10px 650px;
-    margin-left: 100px;
+}
+#inquiry_img{
+    margin-left: 1600px;
+    margin-top: -40px;
 }
 
 #Main_image{
     margin-top: 70px;
+    padding: 0px 288px;
     position: relative;
 }
 .image_m_1{
     position:absolute;
-    top: 40%;
-    right: 70%;
+    margin-top: -400px;
+    margin-left: 530px;
     width: 20px;
     height: 20px;
     border-radius: 50%;
@@ -39,8 +43,8 @@
 }
 .image_m_2{
     position:absolute;
-    top: 37%;
-    right: 65%;
+    margin-top: -470px;
+    margin-left: 630px;
     width: 20px;
     height: 20px;
     border-radius: 50%;
@@ -48,8 +52,8 @@
 }
 .image_m_3{
     position:absolute;
-    top: 35%;
-    right: 50%;
+    margin-top: -500px;
+    margin-left: 930px;
     width: 20px;
     height: 20px;
     border-radius: 50%;
@@ -58,8 +62,8 @@
 
 .image_m1_1{
     position:absolute;
-    top: 60%;
-    right: 25%;
+    margin-top: -250px;
+    margin-left: 1380px;
     width: 20px;
     height: 20px;
     border-radius: 50%;
@@ -67,8 +71,8 @@
 }
 .image_m1_2{
     position:absolute;
-    top: 50%;
-    right: 43%;
+    margin-top: -350px;
+    margin-left: 1030px;
     width: 20px;
     height: 20px;
     border-radius: 50%;
@@ -76,8 +80,8 @@
 }
 .image_m1_3{
     position:absolute;
-    top: 30%;
-    right: 32%;
+    margin-top: -550px;
+    margin-left: 1250px;
     width: 20px;
     height: 20px;
     border-radius: 50%;
@@ -85,8 +89,8 @@
 }
 .image_m1_4{
     position:absolute;
-    top: 37%;
-    right: 67%;
+    margin-top: -480px;
+    margin-left: 600px;
     width: 20px;
     height: 20px;
     border-radius: 50%;
@@ -94,8 +98,8 @@
 }
 .image_m1_5{
     position:absolute;
-    top: 32%;
-    right: 59%;
+    margin-top: -540px;
+    margin-left: 750px;
     width: 20px;
     height: 20px;
     border-radius: 50%;
@@ -103,8 +107,8 @@
 }
 .image_m1_6{
     position:absolute;
-    top: 42%;
-    right: 75%;
+    margin-top: -420px;
+    margin-left: 450px;
     width: 20px;
     height: 20px;
     border-radius: 50%;
@@ -112,8 +116,8 @@
 }
 .image_m2_1{
     position:absolute;
-    top: 55%;
-    right: 53%;
+    margin-top: -300px;
+    margin-left: 860px;
     width: 20px;
     height: 20px;
     border-radius: 50%;
@@ -121,8 +125,8 @@
 }
 .image_m2_2{
     position:absolute;
-    top: 45%;
-    right: 48%;
+    margin-top: -400px;
+    margin-left: 960px;
     width: 20px;
     height: 20px;
     border-radius: 50%;
@@ -130,8 +134,8 @@
 }
 .image_m2_3{
     position:absolute;
-    top: 35%;
-    right: 43%;
+    margin-top: -500px;
+    margin-left: 1060px;
     width: 20px;
     height: 20px;
     border-radius: 50%;
@@ -166,8 +170,8 @@
 }
 .image_m4_1{
     position:absolute;
-    top: 40%;
-    right: 67%;
+    margin-top: -450px;
+    margin-left: 600px;
     width: 20px;
     height: 20px;
     border-radius: 50%;
@@ -175,8 +179,8 @@
 }
 .image_m4_2{
     position:absolute;
-    top: 35%;
-    right: 59%;
+    margin-top: -510px;
+    margin-left: 750px;
     width: 20px;
     height: 20px;
     border-radius: 50%;
@@ -184,8 +188,8 @@
 }
 .image_m4_3{
     position:absolute;
-    top: 45%;
-    right: 75%;
+    margin-top: -390px;
+    margin-left: 450px;
     width: 20px;
     height: 20px;
     border-radius: 50%;
@@ -193,8 +197,8 @@
 }
 .image_m5_1{
     position:absolute;
-    top: 43%;
-    right: 67%;
+    margin-top: -420px;
+    margin-left: 600px;
     width: 20px;
     height: 20px;
     border-radius: 50%;
@@ -202,8 +206,8 @@
 }
 .image_m5_2{
     position:absolute;
-    top: 38%;
-    right: 59%;
+    margin-top: -480px;
+    margin-left: 750px;
     width: 20px;
     height: 20px;
     border-radius: 50%;
@@ -211,27 +215,33 @@
 }
 .image_m5_3{
     position:absolute;
-    top: 48%;
-    right: 75%;
+    margin-top: -360px;
+    margin-left: 450px;
     width: 20px;
     height: 20px;
     border-radius: 50%;
     background-color: red;
 }
-
+.x_bt{
+    width: 1800px;
+}
 .image_x{
     position: absolute;
-    top: 62%;
-    right: 82.5%;
+    margin-top: -50px;
+    margin-left: -580px;
     width: 30px;
     height: 30px;
     font-size: 30px;
     color:black;
     background-color: transparent;
+    transform: translate( -50%, -50% );
 }
 .over_view p{
     text-align: left;
     margin-left: 300px;
+}
+#main_text{
+    width: 1575px;
 }
 
 #x{
@@ -249,6 +259,9 @@
     list-style: none;
     display: flex;
     justify-content: center;
+    width: 1810px;
+    padding: 0px 33px;
+    
 }
 .menu ul li{
     float: left;
@@ -261,17 +274,21 @@
     font-size: 20px;
     border: 1px solid ;
 }
-
+button{
+    border: none;
+    background-color: #FFF;
+    color:#4D606B;
+}
 
 footer {                         
     background-color: #E3E3E3;
     height: 15vh;
     line-height: 8px;
-
+    width: 1879px;
 }
 address{
     text-align: left;
-    padding-left: 750px;
+    width: 1125px;
     padding-top: 30px;
 }
 address p{

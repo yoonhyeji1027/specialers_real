@@ -86,7 +86,7 @@ export default function Inquiry(){
             <li><p id='title' style={{ color: '#515151' }}>내용</p></li>
             <li><textarea type="text" name="content" style={{ width: '900px', height: '200px', marginLeft: '-5px' }}></textarea></li>
           </ul>
-          <button onClick={sendEmail}>제출하기</button>
+          <button id='inquiry_bt' onClick={sendEmail}>제출하기</button>
         </div>
       </div>
 

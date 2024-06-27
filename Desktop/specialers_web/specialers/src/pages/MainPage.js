@@ -238,7 +238,6 @@ export default function MainPage() {
     }
   };
 
-
   const openModalByButton = (buttonIndex) => {
     if (buttonIndex === 1 || buttonIndex === 2 || buttonIndex === 3) {
       openModal();
@@ -271,8 +270,10 @@ export default function MainPage() {
 
       <div className='over_view'>
         <img id='Main_image' src={currentImage} width='1300px' height='600px' />
-        <button className='image_x' onClick={handleResetImage}>*</button>
-        <p>※ 수조 데이터를 실시간으로 조회하고 싶다면 고객문의로 문의 바랍니다.</p>
+        <div className='x_bt'>
+        <img className='image_x' src='/images/inquiry.png' onClick={handleResetImage} alt='reset' />
+        </div>
+        <p id='main_text'>※ 수조 데이터를 실시간으로 조회하고 싶다면 고객문의로 문의 바랍니다.</p>
         <div className='circle_buttons'>
           {buttonState.img_bt11 !== 'hidden' && (
             <div className={buttonState.img_bt11} onClick={() => handleImageChange('image1', 'image_m1_1')}></div>
@@ -306,7 +307,7 @@ export default function MainPage() {
         <Modal isOpen={isOpen} onRequestClose={closeModal} style={customStyles}>
           <button id='x' onClick={closeModal}>X</button>
           <hr style={{ marginTop: '10px', width: '100%', marginLeft: '0px', marginRight: '0px' }} />
-          <DashPlayer url="https://dash.akamaized.net/akamai/bbb_30fps/bbb_30fps.mpd" />
+          <DashPlayer url="http://192.168.0.8:8080/specialers/_definst_/myStream/manifest.mpd" />
           <p id='ov_text'>※ 현재 실시간 데이터 및 영상을 30초 동안 조회할 수 있습니다. 더 자세한 데이터를 원하신다면 고객문의에서 문의해주시길 바랍니다.</p>
           <div className='graph_view' style={{ height: '500px', width: '500px', marginTop: '-20px', marginLeft: '800px', marginRight: '0px' }}>
             <LineGraph data={lineDataList} />
@@ -336,7 +337,7 @@ export default function MainPage() {
 
       <footer>
         <address>
-          <p>(주) 스페셜러스</p>
+          <p>스페셜러스</p>
           <p>주소: 강원특별자치도 양양군 손양면 학포길 226-61</p>
           <p>©2023 specialers Corporation ALL RIGHTS RESERVED</p>
         </address>
