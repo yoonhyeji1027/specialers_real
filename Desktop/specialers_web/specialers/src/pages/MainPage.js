@@ -93,7 +93,7 @@ export default function MainPage() {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('http://localhost:3001/tanks');
+      const response = await axios.get('http://121.155.34.16:8080/tanks'); 
       const _barDataList = response.data.tanks.map((tank, index) => ({
         idx: tank.idx ?? 0,
         farm_id: tank.farm_id ?? 0,
