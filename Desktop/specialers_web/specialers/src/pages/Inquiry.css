@@ -14,6 +14,8 @@ h2{margin-top: 20px; margin-bottom: 40px;}
 h3{margin-top: 20px; margin-bottom: 20px; font-weight: bolder;}
 p{margin-top: 20px; margin-bottom: 20px;}
 
+#line{margin: 50px 100px;}
+
 .Inquiry{
     padding: 50px 270px;
     margin-top: -10px;
@@ -77,16 +79,17 @@ select{
 
 footer {                         
     background-color: #E3E3E3;
+    color: #515151;
     height: 15vh;
     line-height: 8px;
-    width: 1879px;
+
 }
 address{
     text-align: left;
-    width: 1125px;
+    padding-left: 750px;
     padding-top: 30px;
 }
 address p{
     font-size: 18px;
-    line-height: 5px;
+    line-height: 10px;
   }

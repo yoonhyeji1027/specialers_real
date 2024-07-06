@@ -68,15 +68,18 @@
     color:#4D606B;
     padding-top: 15px;
 }
+#P_line{margin: 50px 100px;}
 
 footer {                         
     background-color: #E3E3E3;
+    color: #515151;
     height: 15vh;
     line-height: 8px;
+
 }
 address{
     text-align: left;
-    padding-left: 750px;
+    padding-left: 150px;
     padding-top: 30px;
 }
 address p{

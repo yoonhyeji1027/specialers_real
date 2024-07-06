@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.logoImg{
+    text-align: left;
+    margin-left: 0%;
+}
+.navbar{
+    top: 0%;
+    width: 1860px;
+    background-color: #FFF;
+    margin-bottom: 100px;
+}
+.navMenu{
+    text-align: center;
+    list-style: none;
+    
+}
+.textMenu{
+    margin-left: 660px;
+    margin-right: -100px;
+    padding: 10px 0px;
+    width: 900px;
+}
+.nav-item{
+    padding: 0px 15px;
+    display: inline-block;
+    margin: 0px 15px;
+    background-color: transparent;
+}
+.nav-link{
+    text-decoration: none;
+    color: #000;
+}

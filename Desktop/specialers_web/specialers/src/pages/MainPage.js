@@ -4,6 +4,7 @@ import "./MainPage.css";
 import Modal from "react-modal";
 import LineGraph from './LineGraph.jsx';
 import DashPlayer from './DashPlayer.js';
+import Header from './Header.js';
 
 export default function MainPage() {
   const [isOpen, setIsOpen] = useState(false);
@@ -259,14 +260,7 @@ export default function MainPage() {
 
   return (
     <div>
-      <div className='header'>
-        <a className='logo' href='MainPage.js'>
-          <img id='logo_img' src='/images/logo.png' width='263px' height='66.27px' />
-        </a>
-        <a className='inquity' href='Inquiry.js'>
-          <img id='inquiry_img' src='/images/inquiry.png' width='55px' height='55px' />
-        </a>
-      </div>
+      <Header />
 
       <div className='over_view'>
         <img id='Main_image' src={currentImage} width='1300px' height='600px' />
@@ -307,32 +301,12 @@ export default function MainPage() {
         <Modal isOpen={isOpen} onRequestClose={closeModal} style={customStyles}>
           <button id='x' onClick={closeModal}>X</button>
           <hr style={{ marginTop: '10px', width: '100%', marginLeft: '0px', marginRight: '0px' }} />
-          <DashPlayer url="http://192.168.0.8:8080/specialers/_definst_/myStream/manifest.mpd" />
+          <DashPlayer url="https://dash.akamaized.net/akamai/bbb_30fps/bbb_30fps.mpd" />
           <p id='ov_text'>※ 현재 실시간 데이터 및 영상을 30초 동안 조회할 수 있습니다. 더 자세한 데이터를 원하신다면 고객문의에서 문의해주시길 바랍니다.</p>
           <div className='graph_view' style={{ height: '500px', width: '500px', marginTop: '-20px', marginLeft: '800px', marginRight: '0px' }}>
             <LineGraph data={lineDataList} />
           </div>
         </Modal>
-      </div>
-
-      <div className='menu'>
-        <ul id='menu_list'>
-          <li id='menu_bt'>
-            <a href='S_info.js'>
-              <button>회사소개</button>
-            </a>
-          </li>
-          <li id='menu_bt'>
-            <a href='P_info.js'>
-              <button>제품소개</button>
-            </a>
-          </li>
-          <li id='menu_bt'>
-            <a href='Salmon.js'>
-              <button>연어양식</button>
-            </a>
-          </li>
-        </ul>
       </div>
 
       <footer>

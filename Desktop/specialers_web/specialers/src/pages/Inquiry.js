@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import './Inquiry.css';
+import Header from './Header.js';
 
 export default function Inquiry(){
   const form = useRef();
@@ -22,21 +23,14 @@ export default function Inquiry(){
   return (
     <form ref={form} onSubmit={sendEmail}>
       <div>
-      <div className='header'>
-        <a className='logo' href='MainPage.js'>
-          <img id='logo_img' src='/images/logo.png' width='263px' height='66.27px' />
-        </a>
-        <a className='inquiry' href='Inquiry.js'>
-          <img id='inquiry_img' src='/images/inquiry.png' width='55px' height='55px' />
-        </a>
-      </div>
+      <Header />
 
       <div className='Inquiry'>
         <div className='inquiry_h'>
           <h3 style={{ color: '#4D606B', fontSize: '30px' }}>고객문의</h3>
           <p style={{ color: '#515151' }}>고객님이 보내주신 문의에 대한 답변은 기재하신 이메일 혹은 연락처로 발송됩니다.</p>
         </div>
-        <hr style={{ border: 'none', borderTop: '2px solid #000' }} />
+        <hr id='line' style={{ border: 'none', borderTop: '2px solid #000' }} />
 
         <div className='text_box'>
           <ul className='inquiry_list'>
@@ -48,19 +42,19 @@ export default function Inquiry(){
               <option value="회사 관련 문의">회사 관련 문의</option>
             </select>
           </ul>
-          <hr style={{ border: 'none', borderTop: '2px dotted #000' }} />
+          <hr id='line' style={{ border: 'none', borderTop: '2px dotted #000' }} />
           <ul className='inquiry_list'>
             <li><img src="images/inquiry_2.png" width="25px" height="35px" alt="inquiry2" /></li>
             <li><p id='title' style={{ color: '#515151' }}>성명</p></li>
             <li><input type="text" name="name" style={{ width: '250px', height: '40px', marginLeft: '-5px' }}></input></li>
           </ul>
-          <hr style={{ border: 'none', borderTop: '2px dotted #000' }} />
+          <hr id='line' style={{ border: 'none', borderTop: '2px dotted #000' }} />
           <ul className='inquiry_list'>
             <li><img src="images/inquiry_3.png" width="25px" height="35px" alt="inquiry3" /></li>
             <li><p id='title' style={{ color: '#515151' }}>휴대번호</p></li>
             <li><input type="text" name="phonenumber" style={{ width: '300px', height: '40px', marginLeft: '-45px' }}></input></li>
           </ul>
-          <hr style={{ border: 'none', borderTop: '2px dotted #000' }} />
+          <hr id='line' style={{ border: 'none', borderTop: '2px dotted #000' }} />
           <ul className='inquiry_list'>
             <li><img src="images/inquiry_4.png" width="25px" height="25px" alt="inquiry4" style={{ marginTop: '10px' }} /></li>
             <li><p id='title' style={{ color: '#515151' }}>이메일</p></li>
@@ -74,13 +68,13 @@ export default function Inquiry(){
               </select>
             </li>
           </ul>
-          <hr style={{ border: 'none', borderTop: '2px dotted #000' }} />
+          <hr id='line' style={{ border: 'none', borderTop: '2px dotted #000' }} />
           <ul className='inquiry_list'>
             <li><img src="images/inquiry_5.png" width="25px" height="35px" alt="inquiry5" /></li>
             <li><p id='title' style={{ color: '#515151' }}>제목</p></li>
             <li><input type="text" name="subject" style={{ width: '900px', height: '40px', marginLeft: '-5px' }}></input></li>
           </ul>
-          <hr style={{ border: 'none', borderTop: '2px dotted #000' }} />
+          <hr id='line' style={{ border: 'none', borderTop: '2px dotted #000' }} />
           <ul className='inquiry_list'>
             <li><img src="images/inquiry_6.png" width="25px" height="25px" alt="inquiry6" /></li>
             <li><p id='title' style={{ color: '#515151' }}>내용</p></li>

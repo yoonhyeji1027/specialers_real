@@ -24,58 +24,20 @@ p{margin-top: 20px; margin-bottom: 20px; font-size: 20px;}
     display: flex;
     align-items: center;
     width: 1800px;
-  }
-  
-  .sujo_data video{
-    margin-top: 70px;
-    margin-right: 20px; 
-    margin-bottom: 70px;
-    margin-left: 100px;
-    width: 823px;
-    height: 768px;
+    height: 500px;
+    margin-left: 150px;
   }
   
   #sujo_text {
     flex-grow: 1;
     text-align: left;
-    margin-left: 170px;
+    margin-left: 350px;
   }
 
-.graph {
-    display: flex;
-    flex-direction: column;
-    padding: 50px 50px;
-    width: 1800px;
-  }
-  
-  .graph_data {
-    display: flex;
-    align-items: center;
-    
-  }
-  
-  .graph_view {
-    margin-top: 70px;
-    margin-left: 20px; 
-    margin-bottom: 70px;
-    margin-right: 100px;
-    order: 2; 
-    width: 823px;
-    height: 768px;
-  }
-  
-  #graph_text {
-    flex-grow: 1;
-    order: 1; 
-    text-align: left;
-    margin-left: 100px;
-    width: 735px;
-  }
-
-hr{margin: 50px 100px;}
 
 footer {                         
     background-color: #E3E3E3;
+    color: #515151;
     height: 15vh;
     line-height: 8px;
 

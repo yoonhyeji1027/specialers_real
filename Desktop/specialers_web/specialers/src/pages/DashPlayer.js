@@ -17,7 +17,7 @@ const DashPlayer = ({ url }) => {
     <video
       ref={videoRef}
       controls
-      style={{ width:"750px", height:"550px" }}
+      style={{ width:"600px", height:"450px" }}
     />
   );
 };

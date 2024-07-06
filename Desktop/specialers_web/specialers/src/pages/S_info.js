@@ -1,24 +1,11 @@
 import React from 'react';
 import "./S_info.css";
+import Header from './Header.js';
 
 export default function S_info() {
   return (
     <div>
-      <div className='header'>
-        <a className='logo' href='MainPage.js'>
-          <img id='logo_img' src='/images/logo.png' width='263px' height='66.27px' />
-        </a>
-        <a className='inquity' href='Inquiry.js'>
-          <img id='inquiry_img' src='/images/inquiry.png' width='55px' height='55px' />
-        </a>
-      </div>
-
-      <div className="button"> {/*회사 소개 상단 스크롤 이동 버튼 */}
-        <button style={{ color: '#515151' }}>
-          <a href='#hello_text'>인사말</a></button>
-        <button style={{ color: '#515151' }}>
-          <a href='#mingan_text'>민간연구</a></button>
-      </div>
+      <Header />
 
       <div className='image_s'> {/*회사 사진 */}
         <img src="images/imsi_s.png" width="611px" height="818px" alt="imsi_s" />
@@ -40,7 +27,7 @@ export default function S_info() {
           <p style={{ color: '#515151', fontSize: '25px' }}>감사합니다.</p>
         </div>
         <div id="hello_name"><p style={{ color: '#515151', fontSize: '28px', fontWeight:'bold' }}>대표  서 은 미</p></div>
-        <hr style={{ border: 'none', borderTop: '2px solid #000' }} />
+        <hr style={{ border: 'none', borderTop: '2px solid #000', margin: '50px 100px' }} />
       </div>
 
 

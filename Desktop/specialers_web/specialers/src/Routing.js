@@ -5,6 +5,7 @@ import S_info from "./pages/S_info.js";
 import Salmon from "./pages/Salmon.js";
 import P_info from "./pages/P_info.js";
 import Inquiry from "./pages/Inquiry.js";
+import Maps from "./pages/Maps.js";
 
 
 function Routing() {
@@ -19,6 +20,7 @@ function Routing() {
             <Route path='/MainPage.js' element={<MainPage />} />
             <Route path='/S_info.js' element={<S_info />} />
             <Route path='/Inquiry.js' element={<Inquiry />} />
+            <Route path='/Maps.js' element={<Maps />} />
 
 
         </Routes>
