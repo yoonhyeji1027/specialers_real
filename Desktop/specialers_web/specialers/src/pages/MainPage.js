@@ -8,21 +8,21 @@ import Header from './Header.js';
 
 export default function MainPage() {
   const [isOpen, setIsOpen] = useState(false);
-  const modalTimeoutId = useRef(null); // 첫 번째 timeoutId 저장
-  const alertTimeoutId = useRef(null); // 두 번째 timeoutId 저장
+  const [selectedGraphData, setSelectedGraphData] = useState('do'); 
+
+  const modalTimeoutId = useRef(null);
+  const alertTimeoutId = useRef(null);
 
   const openModal = () => {
     setIsOpen(true);
 
-    // 모달이 열리면 30초 후에 자동으로 닫히도록 타이머 설정
     modalTimeoutId.current = setTimeout(() => {
       setIsOpen(false);
-    }, 30000); // 30초
+    }, 30000);
 
-    // 모달이 열리면 alert가 30초 후에 실행되도록 타이머 설정
     alertTimeoutId.current = setTimeout(() => {
       alert("현재 실시간 데이터 및 영상을 30초 동안 조회할 수 있습니다. 더 자세한 데이터를 원하신다면 고객문의에서 문의해주시길 바랍니다.");
-    }, 30300); // 30.3초
+    }, 30300);
   };
 
   const closeModal = () => {
@@ -36,13 +36,14 @@ export default function MainPage() {
       alertTimeoutId.current = null;
     }
   };
+
   const customStyles = {
     overlay: {
       backgroundColor: "rgba(0, 0, 0, 0.5)",
     },
     content: {
-      width: "1300px",
-      height: "700px",
+      width: "1400px",
+      height: "750px",
       margin: "auto",
       borderRadius: "4px",
       boxShadow: "0 2px 4px rgba(0, 0, 0, 0.2)",
@@ -50,7 +51,6 @@ export default function MainPage() {
     },
   };
 
-  // 여기서부터 그래프 데이터
   const [tanks, setTanks] = useState([]);
   const [barDataList, setBarDataList] = useState([{
     idx: 0,
@@ -94,7 +94,7 @@ export default function MainPage() {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('http://121.155.34.16:8080/tanks'); 
+      const response = await axios.get('http://121.155.34.16:8080/tanks');
       const _barDataList = response.data.tanks.map((tank, index) => ({
         idx: tank.idx ?? 0,
         farm_id: tank.farm_id ?? 0,
@@ -107,7 +107,7 @@ export default function MainPage() {
       _lineDataList = [];
       response.data.tanks.forEach((tank, index) => {
         const id = tank.tank_id ?? 0;
-        const data = { x: tank.formatted_mea_dt ?? 0, y: tank.temperature ?? 0 };
+        const data = { x: tank.formatted_mea_dt ?? 0, y: tank[selectedGraphData] ?? 0 }; // Use selectedGraphData here
         const existingItemIndex = _lineDataList.findIndex(item => item.id === id);
         if (existingItemIndex !== -1) {
           _lineDataList[existingItemIndex].data.push(data);
@@ -159,103 +159,114 @@ export default function MainPage() {
     return () => {
       clearInterval(intervalId);
     };
-  }, []);
+  }, [selectedGraphData]);
 
-  const [currentImage, setCurrentImage] = useState('/images/image.png');
-  const [buttonState, setButtonState] = useState({
-    img_bt11: 'image_m_1',
-    img_bt22: 'image_m_2',
-    img_bt33: 'image_m_3',
-    img_bt44: 'hidden',
-    img_bt55: 'hidden',
-    img_bt66: 'hidden',
+  const handleGraphDataChange = (dataType) => {
+    setSelectedGraphData(dataType);
+  };
+
+  const fishIconImg = '/images/fish_icon.png';
+  const fishIconHoverImg = '/images/fish_icon_hover.png';
+
+  const [fishIconSrc, setFishIconSrc] = useState(fishIconImg);
+
+  const fishIconHoverSrc = '/images/fish_icon_hover.png';
+  const [hoveredImages, setHoveredImages] = useState({
+    set1: [false, false, false, false, false], 
+    set2: [false, false, false, false, false], 
+    set3: [false, false, false, false, false], 
   });
 
-  const handleImageChange = (imageName, buttonIndex) => {
-    setCurrentImage(`/images/${imageName}.png`);
-    if (imageName === 'image.png') {
-      setButtonState({
-        img_bt1: 'image_m_1',
-        img_bt2: 'image_m_2',
-        img_bt3: 'image_m_3',
-        img_bt4: 'hidden',
-        img_bt5: 'hidden',
-        img_bt6: 'hidden',
-      });
-    } else if (imageName === 'image1') {
-      setButtonState({
-        img_bt1: 'image_m1_4',
-        img_bt2: 'image_m1_5',
-        img_bt3: 'image_m1_6',
-        img_bt4: 'image_m1_2',
-        img_bt5: 'image_m1_3',
-        img_bt6: 'image_m1_1',
-      });
-    } else if (imageName === 'image2') {
-      setButtonState({
-        img_bt1: 'image_m2_1',
-        img_bt2: 'image_m2_2',
-        img_bt3: 'image_m2_3',
-        img_bt4: 'hidden',
-        img_bt5: 'hidden',
-        img_bt6: 'hidden',
-      });
-    } else if (imageName === 'image3') {
-      setButtonState({
-        img_bt1: 'image_m2_1',
-        img_bt2: 'image_m2_2',
-        img_bt3: 'image_m2_3',
-        img_bt4: 'hidden',
-        img_bt5: 'hidden',
-        img_bt6: 'hidden',
-      });
-    } else if (imageName === 'image4') {
-      setButtonState({
-        img_bt1: 'image_m4_1',
-        img_bt2: 'image_m4_2',
-        img_bt3: 'image_m4_3',
-        img_bt4: 'image_m1_2',
-        img_bt5: 'image_m1_3',
-        img_bt6: 'image_m1_1',
-      });
-    } else if (imageName === 'image5') {
-      setButtonState({
-        img_bt1: 'image_m5_1',
-        img_bt2: 'image_m5_2',
-        img_bt3: 'image_m5_3',
-        img_bt4: 'image_m1_2',
-        img_bt5: 'image_m1_3',
-        img_bt6: 'image_m1_1',
-      });
-    } else {
-      setButtonState({
-        img_bt1: 'hidden',
-        img_bt2: 'hidden',
-        img_bt3: 'hidden',
-        img_bt4: 'hidden',
-        img_bt5: 'hidden',
-        img_bt6: 'hidden',
-      });
-    }
+  const handleFishIconMouseOver = (setImageSet, index) => {
+    const newHoveredImages = { ...hoveredImages };
+    newHoveredImages[setImageSet][index] = true; 
+    setHoveredImages(newHoveredImages); 
   };
 
-  const openModalByButton = (buttonIndex) => {
-    if (buttonIndex === 1 || buttonIndex === 2 || buttonIndex === 3) {
-      openModal();
-    }
+  const handleFishIconMouseOut = (setImageSet, index) => {
+    const newHoveredImages = { ...hoveredImages };
+    newHoveredImages[setImageSet][index] = false; 
+    setHoveredImages(newHoveredImages); 
   };
 
-  // 이미지 초기화 함수
+  const [currentImageSet, setCurrentImageSet] = useState(null);
+  const [currentRealImageIndex, setCurrentRealImageIndex] = useState(0);
+  const realImages1 = [
+    '/images/real_image1_1.png',
+    '/images/real_image1_2.png',
+    '/images/real_image1_3.png',
+    '/images/real_image1_4.png',
+    '/images/real_image1_5.png'
+  ];
+  const realImages2 = [
+    '/images/real_image2_1.png',
+    '/images/real_image2_2.png',
+    '/images/real_image2_3.png',
+    '/images/real_image2_4.png',
+    '/images/real_image2_5.png'
+  ];
+  const realImages3 = [
+    '/images/real_image3_1.png',
+    '/images/real_image3_2.png',
+    '/images/real_image3_3.png',
+    '/images/real_image3_4.png',
+    '/images/real_image3_5.png'
+  ];
+
+  const handleImageSetChange = (set) => {
+    setCurrentImageSet(set);
+    setCurrentRealImageIndex(0);
+  };
+
   const handleResetImage = () => {
-    setCurrentImage('/images/image.png');
-    setButtonState({
-      img_bt11: 'image_m_1',
-      img_bt22: 'image_m_2',
-      img_bt33: 'image_m_3',
-      img_bt44: 'hidden',
-      img_bt55: 'hidden',
-      img_bt66: 'hidden',
-    });
+    setCurrentImageSet(null);
+    setCurrentRealImageIndex(0);
+  };
+
+  const handleNextImage = () => {
+    let realImages = [];
+    if (currentImageSet === 'set1') realImages = realImages1;
+    else if (currentImageSet === 'set2') realImages = realImages2;
+    else if (currentImageSet === 'set3') realImages = realImages3;
+
+    setCurrentRealImageIndex((prevIndex) => (prevIndex + 1) % realImages.length);
+  };
+
+  const handlePrevImage = () => {
+    let realImages = [];
+    if (currentImageSet === 'set1') realImages = realImages1;
+    else if (currentImageSet === 'set2') realImages = realImages2;
+    else if (currentImageSet === 'set3') realImages = realImages3;
+
+    setCurrentRealImageIndex((prevIndex) => (prevIndex - 1 + realImages.length) % realImages.length);
+  };
+
+  const handleSpecificImageClick = (set, index) => {
+    setCurrentImageSet(set);
+    setCurrentRealImageIndex(index);
+  };
+
+  const renderButtons = () => {
+    let realImages = [];
+    if (currentImageSet === 'set1') realImages = realImages1;
+    else if (currentImageSet === 'set2') realImages = realImages2;
+    else if (currentImageSet === 'set3') realImages = realImages3;
+
+    const currentImage = realImages[currentRealImageIndex];
+    if (currentImage === '/images/real_image1_2.png' ||
+      currentImage === '/images/real_image1_3.png' ||
+      currentImage === '/images/real_image1_4.png' ||
+      currentImage === '/images/real_image2_1.png' ||
+      currentImage === '/images/real_image2_2.png' ||
+      currentImage === '/images/real_image2_3.png' ||
+      currentImage === '/images/real_image3_1.png' ||
+      currentImage === '/images/real_image3_2.png' ||
+      currentImage === '/images/real_image3_3.png') {
+      return (
+        <button className='modal_bt' onClick={openModal}>데이터 조회하기</button>
+      );
+    }
+    return <button className='modal_bt_back'></button>;
   };
 
   return (
@@ -263,47 +274,228 @@ export default function MainPage() {
       <Header />
 
       <div className='over_view'>
-        <img id='Main_image' src={currentImage} width='1300px' height='600px' />
+        {currentImageSet === 'set1' ? (
+          <div className='image_set'>
+            <img className='img_display' src='/images/image1.png' width='600px' height='600px' style={{ marginRight: '120px', marginLeft: '180px' }} />
+            <img className='img_prev' src='/images/prev.png' width='40px' height='60px' onClick={handlePrevImage} />
+            <img className='img_display' src={realImages1[currentRealImageIndex]} width='600px' height='600px' />
+            <img className='img_next' src='/images/next.png' width='40px' height='60px' onClick={handleNextImage} />
+            {renderButtons()}
+          </div>
+        ) : currentImageSet === 'set2' ? (
+          <div className='image_set'>
+            <img className='img_display' src='/images/image2.png' width='600px' height='600px' style={{ marginRight: '120px', marginLeft: '180px' }} />
+            <img className='img_prev' src='/images/prev.png' width='40px' height='60px' onClick={handlePrevImage} />
+            <img className='img_display' src={realImages2[currentRealImageIndex]} width='600px' height='600px' />
+            <img className='img_next' src='/images/next.png' width='40px' height='60px' onClick={handleNextImage} />
+            {renderButtons()}
+          </div>
+        ) : currentImageSet === 'set3' ? (
+          <div className='image_set'>
+            <img className='img_display' src='/images/image3.png' width='600px' height='600px' style={{ marginRight: '120px', marginLeft: '180px' }} />
+            <img className='img_prev' src='/images/prev.png' width='40px' height='60px' onClick={handlePrevImage} />
+            <img className='img_display' src={realImages3[currentRealImageIndex]} width='600px' height='600px' />
+            <img className='img_next' src='/images/next.png' width='40px' height='60px' onClick={handleNextImage} />
+            {renderButtons()}
+          </div>
+        ) : (
+          <img id='Main_image' src='/images/image.png' width='1500px' height='750px' />
+        )}
         <div className='x_bt'>
-        <img className='image_x' src='/images/inquiry.png' onClick={handleResetImage} alt='reset' />
+          <img className='image_x' src='/images/prev.png' onClick={handleResetImage} alt='reset' />
         </div>
         <p id='main_text'>※ 수조 데이터를 실시간으로 조회하고 싶다면 고객문의로 문의 바랍니다.</p>
+        
         <div className='circle_buttons'>
-          {buttonState.img_bt11 !== 'hidden' && (
-            <div className={buttonState.img_bt11} onClick={() => handleImageChange('image1', 'image_m1_1')}></div>
+          {currentImageSet === null && (
+            <>
+              <img
+                className='image_m_1'
+                src={hoveredImages['set1'][0] ? fishIconHoverSrc : fishIconSrc}
+                onMouseOver={() => handleFishIconMouseOver('set1', 0)}
+                onMouseOut={() => handleFishIconMouseOut('set1', 0)}
+                onClick={() => handleImageSetChange('set1')}
+                alt='set1'
+              />
+              <img
+                className='image_m_2'
+                src={hoveredImages['set2'][0] ? fishIconHoverSrc : fishIconSrc}
+                onMouseOver={() => handleFishIconMouseOver('set2', 0)}
+                onMouseOut={() => handleFishIconMouseOut('set2', 0)}
+                onClick={() => handleImageSetChange('set2')}
+                alt='set2'
+              />
+              <img
+                className='image_m_3'
+                src={hoveredImages['set3'][0] ? fishIconHoverSrc : fishIconSrc}
+                onMouseOver={() => handleFishIconMouseOver('set3', 0)}
+                onMouseOut={() => handleFishIconMouseOut('set3', 0)}
+                onClick={() => handleImageSetChange('set3')}
+                alt='set3'
+              />
+            </>
           )}
-          {buttonState.img_bt22 !== 'hidden' && (
-            <div className={buttonState.img_bt22} onClick={() => handleImageChange('image2', 'image_m1_2')}></div>
+
+          {currentImageSet === 'set1' && (
+            <>
+              <img
+                className='image_m1_1'
+                src={hoveredImages['set1'][0] ? fishIconHoverSrc : fishIconSrc}
+                onMouseOver={() => handleFishIconMouseOver('set1', 0)}
+                onMouseOut={() => handleFishIconMouseOut('set1', 0)}
+                onClick={() => handleSpecificImageClick('set1', 0)}
+                alt='set1_0'
+              />
+              <img
+                className='image_m1_2'
+                src={hoveredImages['set1'][1] ? fishIconHoverSrc : fishIconSrc}
+                onMouseOver={() => handleFishIconMouseOver('set1', 1)}
+                onMouseOut={() => handleFishIconMouseOut('set1', 1)}
+                onClick={() => handleSpecificImageClick('set1', 1)}
+                alt='set1_1'
+              />
+              <img
+                className='image_m1_3'
+                src={hoveredImages['set1'][2] ? fishIconHoverSrc : fishIconSrc}
+                onMouseOver={() => handleFishIconMouseOver('set1', 2)}
+                onMouseOut={() => handleFishIconMouseOut('set1', 2)}
+                onClick={() => handleSpecificImageClick('set1', 2)}
+                alt='set1_2'
+              />
+              <img
+                className='image_m1_4'
+                src={hoveredImages['set1'][3] ? fishIconHoverSrc : fishIconSrc}
+                onMouseOver={() => handleFishIconMouseOver('set1', 3)}
+                onMouseOut={() => handleFishIconMouseOut('set1', 3)}
+                onClick={() => handleSpecificImageClick('set1', 3)}
+                alt='set1_3'
+              />
+              <img
+                className='image_m1_5'
+                src={hoveredImages['set1'][4] ? fishIconHoverSrc : fishIconSrc}
+                onMouseOver={() => handleFishIconMouseOver('set1', 4)}
+                onMouseOut={() => handleFishIconMouseOut('set1', 4)}
+                onClick={() => handleSpecificImageClick('set1', 4)}
+                alt='set1_4'
+              />
+            </>
           )}
-          {buttonState.img_bt33 !== 'hidden' && (
-            <div className={buttonState.img_bt33} onClick={() => handleImageChange('image3', 'image_m1_3')}></div>
+
+          {currentImageSet === 'set2' && (
+            <>
+              <img
+                className='image_m2_1'
+                src={hoveredImages['set2'][0] ? fishIconHoverSrc : fishIconSrc}
+                onMouseOver={() => handleFishIconMouseOver('set2', 0)}
+                onMouseOut={() => handleFishIconMouseOut('set2', 0)}
+                onClick={() => handleSpecificImageClick('set2', 0)}
+                alt='set2_0'
+              />
+              <img
+                className='image_m2_2'
+                src={hoveredImages['set2'][1] ? fishIconHoverSrc : fishIconSrc}
+                onMouseOver={() => handleFishIconMouseOver('set2', 1)}
+                onMouseOut={() => handleFishIconMouseOut('set2', 1)}
+                onClick={() => handleSpecificImageClick('set2', 1)}
+                alt='set2_1'
+              />
+              <img
+                className='image_m2_3'
+                src={hoveredImages['set2'][2] ? fishIconHoverSrc : fishIconSrc}
+                onMouseOver={() => handleFishIconMouseOver('set2', 2)}
+                onMouseOut={() => handleFishIconMouseOut('set2', 2)}
+                onClick={() => handleSpecificImageClick('set2', 2)}
+                alt='set2_2'
+              />
+              <img
+                className='image_m2_4'
+                src={hoveredImages['set2'][3] ? fishIconHoverSrc : fishIconSrc}
+                onMouseOver={() => handleFishIconMouseOver('set2', 3)}
+                onMouseOut={() => handleFishIconMouseOut('set2', 3)}
+                onClick={() => handleSpecificImageClick('set2', 3)}
+                alt='set2_3'
+              />
+              <img
+                className='image_m2_5'
+                src={hoveredImages['set2'][4] ? fishIconHoverSrc : fishIconSrc}
+                onMouseOver={() => handleFishIconMouseOver('set2', 4)}
+                onMouseOut={() => handleFishIconMouseOut('set2', 4)}
+                onClick={() => handleSpecificImageClick('set2', 4)}
+                alt='set2_4'
+              />
+            </>
           )}
-          {buttonState.img_bt1 !== 'hidden' && (
-            <div className={buttonState.img_bt1} onClick={() => openModalByButton(1)}></div>
-          )}
-          {buttonState.img_bt2 !== 'hidden' && (
-            <div className={buttonState.img_bt2} onClick={() => openModalByButton(2)}></div>
-          )}
-          {buttonState.img_bt3 !== 'hidden' && (
-            <div className={buttonState.img_bt3} onClick={() => openModalByButton(3)}></div>
-          )}
-          {buttonState.img_bt1 !== 'hidden' && (
-            <div className={buttonState.img_bt4} onClick={() => handleImageChange('image4', 'image_m1_2')}></div>
-          )}
-          {buttonState.img_bt2 !== 'hidden' && (
-            <div className={buttonState.img_bt5} onClick={() => handleImageChange('image5', 'image_m1_3')}></div>
-          )}
-          {buttonState.img_bt3 !== 'hidden' && (
-            <div className={buttonState.img_bt6} onClick={() => handleImageChange('image1', 'image_m1_1')}></div>
+
+          {currentImageSet === 'set3' && (
+            <>
+              <img
+                className='image_m3_1'
+                src={hoveredImages['set3'][0] ? fishIconHoverSrc : fishIconSrc}
+                onMouseOver={() => handleFishIconMouseOver('set3', 0)}
+                onMouseOut={() => handleFishIconMouseOut('set3', 0)}
+                onClick={() => handleSpecificImageClick('set3', 0)}
+                alt='set3_0'
+              />
+              <img
+                className='image_m3_2'
+                src={hoveredImages['set3'][1] ? fishIconHoverSrc : fishIconSrc}
+                onMouseOver={() => handleFishIconMouseOver('set3', 1)}
+                onMouseOut={() => handleFishIconMouseOut('set3', 1)}
+                onClick={() => handleSpecificImageClick('set3', 1)}
+                alt='set3_1'
+              />
+              <img
+                className='image_m3_3'
+                src={hoveredImages['set3'][2] ? fishIconHoverSrc : fishIconSrc}
+                onMouseOver={() => handleFishIconMouseOver('set3', 2)}
+                onMouseOut={() => handleFishIconMouseOut('set3', 2)}
+                onClick={() => handleSpecificImageClick('set3', 2)}
+                alt='set3_2'
+              />
+              <img
+                className='image_m3_4'
+                src={hoveredImages['set3'][3] ? fishIconHoverSrc : fishIconSrc}
+                onMouseOver={() => handleFishIconMouseOver('set3', 3)}
+                onMouseOut={() => handleFishIconMouseOut('set3', 3)}
+                onClick={() => handleSpecificImageClick('set3', 3)}
+                alt='set3_3'
+              />
+              <img
+                className='image_m3_5'
+                src={hoveredImages['set3'][4] ? fishIconHoverSrc : fishIconSrc}
+                onMouseOver={() => handleFishIconMouseOver('set3', 4)}
+                onMouseOut={() => handleFishIconMouseOut('set3', 4)}
+                onClick={() => handleSpecificImageClick('set3', 4)}
+                alt='set3_4'
+              />
+            </>
           )}
         </div>
 
+
+
+
         <Modal isOpen={isOpen} onRequestClose={closeModal} style={customStyles}>
-          <button id='x' onClick={closeModal}>X</button>
+          <button className='modal_x' onClick={closeModal}>X</button>
           <hr style={{ marginTop: '10px', width: '100%', marginLeft: '0px', marginRight: '0px' }} />
           <DashPlayer url="https://dash.akamaized.net/akamai/bbb_30fps/bbb_30fps.mpd" />
           <p id='ov_text'>※ 현재 실시간 데이터 및 영상을 30초 동안 조회할 수 있습니다. 더 자세한 데이터를 원하신다면 고객문의에서 문의해주시길 바랍니다.</p>
-          <div className='graph_view' style={{ height: '500px', width: '500px', marginTop: '-20px', marginLeft: '800px', marginRight: '0px' }}>
+
+          <div className='graph_view' style={{ height: '600px', width: '700px', marginTop: '-600px', marginLeft: '650px', marginRight: '0px' }}>
+            <ul className='modal_menu' >
+              <li>
+                <button className={`modal_menu_bt ${selectedGraphData === 'do' ? 'active' : ''}`} onClick={() => handleGraphDataChange('do')}>DO</button>
+              </li>
+              <li>
+                <button className={`modal_menu_bt ${selectedGraphData === 'temperature' ? 'active' : ''}`} onClick={() => handleGraphDataChange('temperature')}>Temperature</button>
+              </li>
+              <li>
+                <button className={`modal_menu_bt ${selectedGraphData === 'ph' ? 'active' : ''}`} onClick={() => handleGraphDataChange('ph')}>pH</button>
+              </li>
+              <li>
+                <button className={`modal_menu_bt ${selectedGraphData === 'salinity' ? 'active' : ''}`} onClick={() => handleGraphDataChange('salinity')}>Salinity</button>
+              </li>
+            </ul>
             <LineGraph data={lineDataList} />
           </div>
         </Modal>
