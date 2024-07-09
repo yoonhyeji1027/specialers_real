@@ -302,38 +302,39 @@ export default function MainPage() {
           <img id='Main_image' src='/images/image.png' width='1500px' height='750px' />
         )}
         <div className='x_bt'>
-          <img className='image_x' src='/images/prev.png' onClick={handleResetImage} alt='reset' />
+          <img className='image_x' src='/images/back.png' onClick={handleResetImage} alt='reset' />
         </div>
         <p id='main_text'>※ 수조 데이터를 실시간으로 조회하고 싶다면 고객문의로 문의 바랍니다.</p>
         
         <div className='circle_buttons'>
           {currentImageSet === null && (
             <>
-              <img
-                className='image_m_1'
-                src={hoveredImages['set1'][0] ? fishIconHoverSrc : fishIconSrc}
-                onMouseOver={() => handleFishIconMouseOver('set1', 0)}
-                onMouseOut={() => handleFishIconMouseOut('set1', 0)}
-                onClick={() => handleImageSetChange('set1')}
-                alt='set1'
-              />
-              <img
-                className='image_m_2'
-                src={hoveredImages['set2'][0] ? fishIconHoverSrc : fishIconSrc}
-                onMouseOver={() => handleFishIconMouseOver('set2', 0)}
-                onMouseOut={() => handleFishIconMouseOut('set2', 0)}
-                onClick={() => handleImageSetChange('set2')}
-                alt='set2'
-              />
-              <img
-                className='image_m_3'
-                src={hoveredImages['set3'][0] ? fishIconHoverSrc : fishIconSrc}
-                onMouseOver={() => handleFishIconMouseOver('set3', 0)}
-                onMouseOut={() => handleFishIconMouseOut('set3', 0)}
-                onClick={() => handleImageSetChange('set3')}
-                alt='set3'
-              />
-            </>
+            <img
+              className='image_m_1'
+              src={hoveredImages['set1'][0] ? '/images/hat.png' : fishIconSrc}
+              onMouseOver={() => handleFishIconMouseOver('set1', 0)}
+              onMouseOut={() => handleFishIconMouseOut('set1', 0)}
+              onClick={() => handleImageSetChange('set1')}
+              alt='set1'
+            />
+            <img
+              className='image_m_2'
+              src={hoveredImages['set2'][0] ? '/images/A.png' : fishIconSrc}
+              onMouseOver={() => handleFishIconMouseOver('set2', 0)}
+              onMouseOut={() => handleFishIconMouseOut('set2', 0)}
+              onClick={() => handleImageSetChange('set2')}
+              alt='set2'
+            />
+            <img
+              className='image_m_3'
+              src={hoveredImages['set3'][0] ? '/images/B.png' : fishIconSrc}
+              onMouseOver={() => handleFishIconMouseOver('set3', 0)}
+              onMouseOut={() => handleFishIconMouseOut('set3', 0)}
+              onClick={() => handleImageSetChange('set3')}
+              alt='set3'
+            />
+          </>
+          
           )}
 
           {currentImageSet === 'set1' && (

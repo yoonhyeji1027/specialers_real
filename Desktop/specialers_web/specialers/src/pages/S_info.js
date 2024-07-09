@@ -8,7 +8,7 @@ export default function S_info() {
       <Header />
 
       <div className='image_s'> {/*회사 사진 */}
-        <img src="images/imsi_s.png" width="611px" height="818px" alt="imsi_s" />
+        <img src="images/specialers.jpg" width="611px" height="818px" alt="imsi_s" />
       </div>
 
       <div className="hello" > {/*인사말*/}

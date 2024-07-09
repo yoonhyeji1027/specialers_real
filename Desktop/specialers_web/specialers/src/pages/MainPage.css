@@ -63,14 +63,14 @@
 .image_x{
     position: absolute;
     margin-top: -35px;
-    margin-left: -680px;
-    width: 20px;
+    margin-left: -650px;
+    width:80px;
     height: 30px;
     transform: translate( -50%, -50% );
 }
 .over_view p{
     text-align: left;
-    margin-left: 250px;
+    margin-left: 300px;
 }
 #main_text{
     width: 1575px;
@@ -245,3 +245,6 @@ address p{
     height: 30px;
 }
 
+.image_m_1:hover, .image_m_2:hover, .image_m_3:hover{
+    width: 80px;
+}
