@@ -189,8 +189,64 @@ export default function MainPage() {
     setHoveredImages(newHoveredImages); 
   };
 
-  const [currentImageSet, setCurrentImageSet] = useState(null);
-  const [currentRealImageIndex, setCurrentRealImageIndex] = useState(0);
+  const handleImageSetChange = (set) => {
+    setCurrentImageSet(set);
+    setCurrentRealImageIndex(0);
+    setHoveredImages({
+      set1: [false, false, false, false, false], 
+      set2: [false, false, false, false, false], 
+      set3: [false, false, false, false, false], 
+    });
+  };
+
+  const handleResetImage = () => {
+    setCurrentImageSet(null);
+    setCurrentRealImageIndex(0);
+    setHoveredImages({
+      set1: [false, false, false, false, false], 
+      set2: [false, false, false, false, false], 
+      set3: [false, false, false, false, false], 
+    });
+  };
+
+  const handleNextImage = () => {
+    let realImages = [];
+    if (currentImageSet === 'set1') realImages = realImages1;
+    else if (currentImageSet === 'set2') realImages = realImages2;
+    else if (currentImageSet === 'set3') realImages = realImages3;
+
+    setCurrentRealImageIndex((prevIndex) => (prevIndex + 1) % realImages.length);
+    setHoveredImages({
+      set1: [false, false, false, false, false], 
+      set2: [false, false, false, false, false], 
+      set3: [false, false, false, false, false], 
+    });
+  };
+
+  const handlePrevImage = () => {
+    let realImages = [];
+    if (currentImageSet === 'set1') realImages = realImages1;
+    else if (currentImageSet === 'set2') realImages = realImages2;
+    else if (currentImageSet === 'set3') realImages = realImages3;
+
+    setCurrentRealImageIndex((prevIndex) => (prevIndex - 1 + realImages.length) % realImages.length);
+    setHoveredImages({
+      set1: [false, false, false, false, false], 
+      set2: [false, false, false, false, false], 
+      set3: [false, false, false, false, false], 
+    });
+  };
+
+  const handleSpecificImageClick = (setImageSet, index) => {
+    setCurrentImageSet(setImageSet);
+    setCurrentRealImageIndex(index);
+    setHoveredImages({
+      set1: [false, false, false, false, false], 
+      set2: [false, false, false, false, false], 
+      set3: [false, false, false, false, false], 
+    });
+  };
+
   const realImages1 = [
     '/images/real_image1_1.png',
     '/images/real_image1_2.png',
@@ -213,38 +269,9 @@ export default function MainPage() {
     '/images/real_image3_5.png'
   ];
 
-  const handleImageSetChange = (set) => {
-    setCurrentImageSet(set);
-    setCurrentRealImageIndex(0);
-  };
+  const [currentImageSet, setCurrentImageSet] = useState(null);
+  const [currentRealImageIndex, setCurrentRealImageIndex] = useState(0);
 
-  const handleResetImage = () => {
-    setCurrentImageSet(null);
-    setCurrentRealImageIndex(0);
-  };
-
-  const handleNextImage = () => {
-    let realImages = [];
-    if (currentImageSet === 'set1') realImages = realImages1;
-    else if (currentImageSet === 'set2') realImages = realImages2;
-    else if (currentImageSet === 'set3') realImages = realImages3;
-
-    setCurrentRealImageIndex((prevIndex) => (prevIndex + 1) % realImages.length);
-  };
-
-  const handlePrevImage = () => {
-    let realImages = [];
-    if (currentImageSet === 'set1') realImages = realImages1;
-    else if (currentImageSet === 'set2') realImages = realImages2;
-    else if (currentImageSet === 'set3') realImages = realImages3;
-
-    setCurrentRealImageIndex((prevIndex) => (prevIndex - 1 + realImages.length) % realImages.length);
-  };
-
-  const handleSpecificImageClick = (set, index) => {
-    setCurrentImageSet(set);
-    setCurrentRealImageIndex(index);
-  };
 
   const renderButtons = () => {
     let realImages = [];

@@ -9,7 +9,7 @@ export default function Inquiry(){
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('service_flipj5l', 'template_xq1qbwf', form.current, 'Ve6bFjXhWRZ7xAshS')
+    emailjs.sendForm('service_ysbulm1', 'template_c88spy5', form.current, '6ZlGsWArZgePlPC9a')
     .then(
       (result) => {
         alert("전송되었습니다.");

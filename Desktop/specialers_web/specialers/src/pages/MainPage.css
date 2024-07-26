@@ -21,6 +21,7 @@
     padding: 0px 100px;
     position: relative;
     margin-left: 90px;
+    border-radius: 10%;
 }
 .img_set{
     padding: 0px 50px;
@@ -35,6 +36,9 @@
 .img_next{
     margin-bottom: 270px; 
     margin-left: 40px;
+}
+.img_display{
+    border-radius: 10%;
 }
 
 .modal_bt{
@@ -246,5 +250,5 @@ address p{
 }
 
 .image_m_1:hover, .image_m_2:hover, .image_m_3:hover{
-    width: 80px;
+    width: 110px;
 }
