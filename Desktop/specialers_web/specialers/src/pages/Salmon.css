@@ -23,7 +23,7 @@ p{margin-top: 20px; margin-bottom: 20px; font-size: 20px;}
   .sujo_data {
     display: flex;
     align-items: center;
-    width: 1800px;
+    width: 1670px;
     height: 500px;
     margin-left: 150px;
   }
@@ -41,6 +41,15 @@ footer {
     height: 15vh;
     line-height: 8px;
 
+}
+footer #footer_img{
+  text-align: right;
+  padding-right: 70px;
+  margin-bottom: -70px;
+  padding-top: 20px;
+}
+footer #footer_img img{
+  margin: 0px 10px;
 }
 address{
     text-align: left;

@@ -32,8 +32,9 @@ p{margin-top: 20px; margin-bottom: 20px;}
     font-size: 15px;
     display: flex;
     padding: 15px 0px;
-    width: 1500px;
+    width: 1400px;
     padding-left: 460px;
+    color: #515151;
 }
 #map_info_text li{
     display: inline;
@@ -61,6 +62,15 @@ footer {
     height: 15vh;
     line-height: 8px;
 
+}
+footer #footer_img{
+    text-align: right;
+    padding-right: 70px;
+    margin-bottom: -70px;
+    padding-top: 20px;
+}
+footer #footer_img img{
+    margin: 0px 10px;
 }
 address{
     text-align: left;

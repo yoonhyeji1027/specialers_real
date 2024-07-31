@@ -52,7 +52,7 @@
 }
 .modal_bt_back{
     width: 500px;
-    height: 50px;
+    height: 46px;
     font-size: 20px;
     background-color: transparent;
     border: 3px solid #fff;
@@ -67,14 +67,14 @@
 .image_x{
     position: absolute;
     margin-top: -35px;
-    margin-left: -650px;
-    width:80px;
-    height: 30px;
+    margin-left: -660px;
+    width:50px;
+    height: 50px;
     transform: translate( -50%, -50% );
 }
 .over_view p{
     text-align: left;
-    margin-left: 300px;
+    margin-left: 280px;
 }
 #main_text{
     width: 1575px;
@@ -111,6 +111,15 @@ footer {
     line-height: 8px;
     width: 1878.8px;
 }
+footer #footer_img{
+    text-align: right;
+    padding-right: 70px;
+    margin-bottom: -70px;
+    padding-top: 20px;
+}
+footer #footer_img img{
+    margin: 0px 10px;
+}
 address{
     text-align: left;
     padding-left: 750px;
@@ -123,24 +132,24 @@ address p{
 
 .image_m_1{
     position:absolute;
-    margin-top: -580px;
-    margin-left: -300px;
+    margin-top: -540px;
+    margin-left: -315px;
     width: 40px;
-    height: 30px;
+    height: 40px;
 }
 .image_m_2{
     position:absolute;
-    margin-top: -470px;
-    margin-left: 70px;
+    margin-top: -410px;
+    margin-left: 430px;
     width: 40px;
-    height: 30px;
+    height: 40px;
 }
 .image_m_3{
     position:absolute;
-    margin-top: -410px;
-    margin-left: 250px;
+    margin-top: -440px;
+    margin-left: 580px;
     width: 40px;
-    height: 30px;
+    height: 40px;
 }
 
 .image_m1_1{
@@ -148,107 +157,111 @@ address p{
     margin-top: -600px;
     margin-left: -450px;
     width: 40px;
-    height: 30px;
+    height: 40px;
 }
 .image_m1_2{
     position:absolute;
     margin-top: -560px;
     margin-left: -385px;
     width: 40px;
-    height: 30px;
+    height: 40px;
 }
 .image_m1_3{
     position:absolute;
     margin-top: -475px;
     margin-left: -415px;
     width: 40px;
-    height: 30px;
+    height: 40px;
 }
 .image_m1_4{
     position:absolute;
     margin-top: -365px;
     margin-left: -450px;
     width: 40px;
-    height: 30px;
+    height: 40px;
 }
 .image_m1_5{
     position:absolute;
     margin-top: -550px;
     margin-left: -200px;
     width: 40px;
-    height: 30px;
+    height: 40px;
 }
 .image_m2_1{
     position:absolute;
-    margin-top: -500px;
-    margin-left: -380px;
+    margin-top: -540px;
+    margin-left: -300px;
     width: 40px;
-    height: 30px;
+    height: 40px;
 }
 .image_m2_2{
     position:absolute;
-    margin-top: -350px;
-    margin-left: -380px;
+    margin-top: -460px;
+    margin-left: -360px;
     width: 40px;
-    height: 30px;
+    height: 40px;
 }
 .image_m2_3{
     position:absolute;
-    margin-top: -200px;
-    margin-left: -380px;
+    margin-top: -370px;
+    margin-left: -425px;
     width: 40px;
-    height: 30px;
+    height: 40px;
 }
 .image_m2_4{
     position:absolute;
-    margin-top: -500px;
-    margin-left: -570px;
+    margin-top: -520px;
+    margin-left: -430px;
     width: 40px;
-    height: 30px;
+    height: 40px;
 }
 .image_m2_5{
     position:absolute;
-    margin-top: -500px;
-    margin-left: -170px;
+    margin-top: -440px;
+    margin-left: -280px;
     width: 40px;
-    height: 30px;
+    height: 40px;
 }
 .image_m3_1{
     position:absolute;
-    margin-top: -500px;
-    margin-left: -380px;
+    margin-top: -540px;
+    margin-left: -300px;
     width: 40px;
-    height: 30px;
+    height: 40px;
 }
 .image_m3_2{
     position:absolute;
-    margin-top: -350px;
-    margin-left: -380px;
+    margin-top: -460px;
+    margin-left: -360px;
     width: 40px;
-    height: 30px;
+    height: 40px;
 }
 .image_m3_3{
     position:absolute;
-    margin-top: -200px;
-    margin-left: -380px;
+    margin-top: -370px;
+    margin-left: -425px;
     width: 40px;
-    height: 30px;
+    height: 40px;
 }
 .image_m3_4{
     position:absolute;
-    margin-top: -500px;
-    margin-left: -570px;
+    margin-top: -520px;
+    margin-left: -430px;
     width: 40px;
-    height: 30px;
+    height: 40px;
 }
 .image_m3_5{
     position:absolute;
-    margin-top: -500px;
-    margin-left: -170px;
+    margin-top: -440px;
+    margin-left: -280px;
     width: 40px;
-    height: 30px;
+    height: 40px;
 }
 
-.image_m_1:hover, .image_m_2:hover, .image_m_3:hover{
+.image_m_1:hover{
     width: 110px;
+}
+.image_m_2:hover, .image_m_3:hover{
+    width: 110px;
+    height: 70px;
 }

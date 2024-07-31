@@ -44,11 +44,16 @@ export default function Maps() {
 
 
             <footer>
+                <div id='footer_img'>
+                    <img src='images/footer1.png' style={{ width: '80px', height: '40px' }} />
+                    <img src='images/footer2.png' style={{ width: '50px', height: '40px' }} />
+                    <img src='images/footer3.png' style={{ width: '130px', height: '40px' }} />
+                </div>
                 <address>
-                    <p>(주) 스페셜러스</p>
+                    <p>스페셜러스</p>
                     <p>주소: 강원특별자치도 양양군 손양면 학포길 226-61</p>
                     <p>©2023 specialers Corporation ALL RIGHTS RESERVED</p>
-                </address> 
+                </address>
             </footer>
 
 

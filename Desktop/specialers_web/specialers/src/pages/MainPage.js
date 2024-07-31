@@ -290,7 +290,7 @@ export default function MainPage() {
       currentImage === '/images/real_image3_2.png' ||
       currentImage === '/images/real_image3_3.png') {
       return (
-        <button className='modal_bt' onClick={openModal}>데이터 조회하기</button>
+        <button className='modal_bt' onClick={openModal} style={{ color: '#515151' }} >데이터 조회하기</button>
       );
     }
     return <button className='modal_bt_back'></button>;
@@ -331,7 +331,7 @@ export default function MainPage() {
         <div className='x_bt'>
           <img className='image_x' src='/images/back.png' onClick={handleResetImage} alt='reset' />
         </div>
-        <p id='main_text'>※ 수조 데이터를 실시간으로 조회하고 싶다면 고객문의로 문의 바랍니다.</p>
+        <p id='main_text' style={{ color: '#515151' }} >※ 수조 데이터를 실시간으로 조회하고 싶다면 고객문의로 문의 바랍니다.</p>
         
         <div className='circle_buttons'>
           {currentImageSet === null && (
@@ -507,7 +507,7 @@ export default function MainPage() {
           <button className='modal_x' onClick={closeModal}>X</button>
           <hr style={{ marginTop: '10px', width: '100%', marginLeft: '0px', marginRight: '0px' }} />
           <DashPlayer url="https://dash.akamaized.net/akamai/bbb_30fps/bbb_30fps.mpd" />
-          <p id='ov_text'>※ 현재 실시간 데이터 및 영상을 30초 동안 조회할 수 있습니다. 더 자세한 데이터를 원하신다면 고객문의에서 문의해주시길 바랍니다.</p>
+          <p id='ov_text' style={{ color: '#515151' }} >※ 현재 실시간 데이터 및 영상을 30초 동안 조회할 수 있습니다. 더 자세한 데이터를 원하신다면 고객문의에서 문의해주시길 바랍니다.</p>
 
           <div className='graph_view' style={{ height: '600px', width: '700px', marginTop: '-600px', marginLeft: '650px', marginRight: '0px' }}>
             <ul className='modal_menu' >
@@ -530,6 +530,11 @@ export default function MainPage() {
       </div>
 
       <footer>
+        <div id='footer_img'>
+          <img src='images/footer1.png' style={{ width:'80px', height:'40px' }} />
+          <img src='images/footer2.png' style={{ width:'50px', height:'40px' }} />
+          <img src='images/footer3.png' style={{ width:'130px', height:'40px' }} />
+        </div>
         <address>
           <p>스페셜러스</p>
           <p>주소: 강원특별자치도 양양군 손양면 학포길 226-61</p>

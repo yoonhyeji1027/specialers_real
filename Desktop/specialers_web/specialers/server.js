@@ -37,10 +37,10 @@ app.get('/tanks', (req, res) => {
      FROM (
        SELECT DATE_FORMAT(mea_dt, "%Y-%m-%d %H:%i:%s") AS formatted_mea_dt,
               mea_dt, farm_id, tank_id,
-              MAX(IF((eq_id = 131), value, NULL)) as do,
-              MAX(IF((eq_id = 130), value, NULL)) as ph,
-              MAX(IF((eq_id = 133), value, NULL)) as temperature,
-              MAX(IF((eq_id = 132), value, NULL)) as salinity
+              MAX(IF((eq_id = 143), value, NULL)) as do,
+              MAX(IF((eq_id = 142), value, NULL)) as ph,
+              MAX(IF((eq_id = 146), value, NULL)) as temperature,
+              MAX(IF((eq_id = 145), value, NULL)) as salinity
        FROM (
          SELECT vv.mea_dt, e.farm_id, e.tank_id, vv.eq_id, vv.value
          FROM (SELECT eq_id, farm_id, tank_id, sys_type FROM fms.eq_tb) as e

@@ -13,7 +13,7 @@ export default function S_info() {
 
       <div className="hello" > {/*인사말*/}
         <div id="hello_text">
-          <h4 style={{ color: '#515151', fontSize: '28px', fontWeight:400 }}>| 인사말</h4>
+          <h4 style={{ color: '#515151', fontSize: '28px', fontWeight: 400 }}>| 인사말</h4>
           <h3 style={{ color: '#4D606B', paddingBottom: '50px', fontSize: '35px' }}>SPECIALERS에 오신 것을 환영합니다.</h3>
           <p style={{ color: '#515151', fontSize: '25px' }}>
             스마트양식업은 과거의 관행, 직감, 최선의 추축이 아닌<br />
@@ -26,14 +26,14 @@ export default function S_info() {
           </p>
           <p style={{ color: '#515151', fontSize: '25px' }}>감사합니다.</p>
         </div>
-        <div id="hello_name"><p style={{ color: '#515151', fontSize: '28px', fontWeight:'bold' }}>대표  서 은 미</p></div>
+        <div id="hello_name"><p style={{ color: '#515151', fontSize: '28px', fontWeight: 'bold' }}>대표  서 은 미</p></div>
         <hr style={{ border: 'none', borderTop: '2px solid #000', margin: '50px 100px' }} />
       </div>
 
 
       <div className="mingan"> {/*민간연구 관련 묶음*/}
         <div id="mingan_text"> {/*민간연구 텍스트 묶음*/}
-          <h4 style={{ color: '#515151', paddingBottom: '12px', fontSize: '28px', fontWeight:400 }}>| 민간연구</h4>
+          <h4 style={{ color: '#515151', paddingBottom: '12px', fontSize: '28px', fontWeight: 400 }}>| 민간연구</h4>
           <h3 style={{ color: '#4D606B', paddingBottom: '40px', fontSize: '35px' }}>대서양 연어 스마트 양식의 민간연구개발을 선도적으로 수행하고 있습니다.</h3>
           <p style={{ color: '#515151', fontSize: '25px' }}>
             국내 상황에 맞는 데이터를 분석 및 학습하여 만들어진<br />인공지능 모델을 기반으로 생산 및 운영에 효율적인<br />인공지능 기반 스마트 양식장 관리 시스템을 개발, 보급합니다.
@@ -56,8 +56,13 @@ export default function S_info() {
       </div>
 
       <footer>
+        <div id='footer_img'>
+          <img src='images/footer1.png' style={{ width: '80px', height: '40px' }} />
+          <img src='images/footer2.png' style={{ width: '50px', height: '40px' }} />
+          <img src='images/footer3.png' style={{ width: '130px', height: '40px' }} />
+        </div>
         <address>
-          <p>(주) 스페셜러스</p>
+          <p>스페셜러스</p>
           <p>주소: 강원특별자치도 양양군 손양면 학포길 226-61</p>
           <p>©2023 specialers Corporation ALL RIGHTS RESERVED</p>
         </address>

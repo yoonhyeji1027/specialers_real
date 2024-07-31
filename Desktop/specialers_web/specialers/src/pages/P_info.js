@@ -8,15 +8,15 @@ export default function P_info() {
       <Header />
 
       <div className="p_info"> {/* 푸터 제외 페이지 전체 묶음 */}
-        <h1 style={{ color: '#4D606B', fontSize:'50px', paddingLeft:'50px' }}>스마트양식 인텔리젼스 솔루션</h1>
-        <p style={{ color: '#515151', paddingLeft: '160px', fontSize: '25px', marginTop:'-5px', letterSpacing:'1.2px' }}>Smart FishFarm Intelligence Solution</p>
+        <h1 style={{ color: '#4D606B', fontSize: '50px', paddingLeft: '50px' }}>스마트양식 인텔리젼스 솔루션</h1>
+        <p style={{ color: '#515151', paddingLeft: '160px', fontSize: '25px', marginTop: '-5px', letterSpacing: '1.2px' }}>Smart FishFarm Intelligence Solution</p>
         <div id="p_info_text1"> {/* 상단 문구 묶음 */}
-          <h3 style={{ color: '#579DA8', paddingLeft: '100px', paddingBottom: '80px', fontSize:'30px', fontWeight:'bolder' }}>인공지능 기반 실시간 데이터분석과 양식장 모니터링 연어 치어 생산 시스템</h3>
+          <h3 style={{ color: '#579DA8', paddingLeft: '100px', paddingBottom: '80px', fontSize: '30px', fontWeight: 'bolder' }}>인공지능 기반 실시간 데이터분석과 양식장 모니터링 연어 치어 생산 시스템</h3>
           <ul id="num"> {/* 각 문구들 따로 묶은 거 */}
             <li><h1 style={{ color: '#579DA8' }}>01</h1></li>
             <li><h3 style={{ color: '#515151' }}> 방사능 오염 우려에서 벗어나 비교적 안전한 육지에서 양식</h3></li>
           </ul>
-          <p style={{ color: '#515151', marginLeft:'-5px' }}>지속적으로 오염되고 있는 바다에서 벗어나 비교적 안전한 육지에서 양식, 전염병 및 오염수 중독 예방</p>
+          <p style={{ color: '#515151', marginLeft: '-5px' }}>지속적으로 오염되고 있는 바다에서 벗어나 비교적 안전한 육지에서 양식, 전염병 및 오염수 중독 예방</p>
           <hr id='P_line' style={{ borderStyle: 'dotted' }} />
           <ul id='num'>
             <li><h1 style={{ color: '#579DA8' }}>02</h1></li>
@@ -52,8 +52,13 @@ export default function P_info() {
       </div>
 
       <footer>
+        <div id='footer_img'>
+          <img src='images/footer1.png' style={{ width: '80px', height: '40px' }} />
+          <img src='images/footer2.png' style={{ width: '50px', height: '40px' }} />
+          <img src='images/footer3.png' style={{ width: '130px', height: '40px' }} />
+        </div>
         <address>
-          <p>(주) 스페셜러스</p>
+          <p>스페셜러스</p>
           <p>주소: 강원특별자치도 양양군 손양면 학포길 226-61</p>
           <p>©2023 specialers Corporation ALL RIGHTS RESERVED</p>
         </address>
