@@ -14,13 +14,22 @@ h2{margin-top: 20px; margin-bottom: 40px;}
 h3{margin-top: 20px; margin-bottom: 40px;}
 p{margin-top: 20px; margin-bottom: 20px;}
 
-
-.image_s{
-    display: flex;
+.gallery{
+    width: 1700px;
 }
-.image_s img{
-    justify-content: center;
-    margin-left: 150px;
+.gallery_prev{
+    margin-bottom: 270px; 
+    margin-right: 40px;
+}
+.gallery_next{
+    margin-bottom: 270px; 
+    margin-left: 40px;
+}
+.gallery_video{
+    border-radius: 10%;
+}
+.gallery_img{
+    border-radius: 10%;
 }
 
 .hello{
@@ -28,17 +37,17 @@ p{margin-top: 20px; margin-bottom: 20px;}
     /* background-image: url('/image/background_fish.png'); */ 
 }
 #hello_text{
-    margin-left: 780px;
-    margin-top: -935px;
+    margin-left: 100px;
+    margin-top: 0px;
     padding: 200px 50px; 
     line-height: 34px;
     text-align: left;
     font-size: 20px;
-    width: 900px;
+    width: 1600px;
 }
 #hello_name{
     margin-left: 1200px;
-    margin-top: -230px;
+    margin-top: -300px;
     padding: 170px 50px; 
 }
 .hello h4{margin-top:-100px; margin-bottom: 15px;}

@@ -8,7 +8,7 @@ import Header from './Header.js';
 
 export default function MainPage() {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedGraphData, setSelectedGraphData] = useState('do'); 
+  const [selectedGraphData, setSelectedGraphData] = useState('do');
 
   const modalTimeoutId = useRef(null);
   const alertTimeoutId = useRef(null);
@@ -172,30 +172,30 @@ export default function MainPage() {
 
   const fishIconHoverSrc = '/images/fish_icon_hover.png';
   const [hoveredImages, setHoveredImages] = useState({
-    set1: [false, false, false, false, false], 
-    set2: [false, false, false, false, false], 
-    set3: [false, false, false, false, false], 
+    set1: [false, false, false, false, false],
+    set2: [false, false, false, false, false],
+    set3: [false, false, false, false, false],
   });
 
   const handleFishIconMouseOver = (setImageSet, index) => {
     const newHoveredImages = { ...hoveredImages };
-    newHoveredImages[setImageSet][index] = true; 
-    setHoveredImages(newHoveredImages); 
+    newHoveredImages[setImageSet][index] = true;
+    setHoveredImages(newHoveredImages);
   };
 
   const handleFishIconMouseOut = (setImageSet, index) => {
     const newHoveredImages = { ...hoveredImages };
-    newHoveredImages[setImageSet][index] = false; 
-    setHoveredImages(newHoveredImages); 
+    newHoveredImages[setImageSet][index] = false;
+    setHoveredImages(newHoveredImages);
   };
 
   const handleImageSetChange = (set) => {
     setCurrentImageSet(set);
     setCurrentRealImageIndex(0);
     setHoveredImages({
-      set1: [false, false, false, false, false], 
-      set2: [false, false, false, false, false], 
-      set3: [false, false, false, false, false], 
+      set1: [false, false, false, false, false],
+      set2: [false, false, false, false, false],
+      set3: [false, false, false, false, false],
     });
   };
 
@@ -203,9 +203,9 @@ export default function MainPage() {
     setCurrentImageSet(null);
     setCurrentRealImageIndex(0);
     setHoveredImages({
-      set1: [false, false, false, false, false], 
-      set2: [false, false, false, false, false], 
-      set3: [false, false, false, false, false], 
+      set1: [false, false, false, false, false],
+      set2: [false, false, false, false, false],
+      set3: [false, false, false, false, false],
     });
   };
 
@@ -217,9 +217,9 @@ export default function MainPage() {
 
     setCurrentRealImageIndex((prevIndex) => (prevIndex + 1) % realImages.length);
     setHoveredImages({
-      set1: [false, false, false, false, false], 
-      set2: [false, false, false, false, false], 
-      set3: [false, false, false, false, false], 
+      set1: [false, false, false, false, false],
+      set2: [false, false, false, false, false],
+      set3: [false, false, false, false, false],
     });
   };
 
@@ -231,9 +231,9 @@ export default function MainPage() {
 
     setCurrentRealImageIndex((prevIndex) => (prevIndex - 1 + realImages.length) % realImages.length);
     setHoveredImages({
-      set1: [false, false, false, false, false], 
-      set2: [false, false, false, false, false], 
-      set3: [false, false, false, false, false], 
+      set1: [false, false, false, false, false],
+      set2: [false, false, false, false, false],
+      set3: [false, false, false, false, false],
     });
   };
 
@@ -241,9 +241,9 @@ export default function MainPage() {
     setCurrentImageSet(setImageSet);
     setCurrentRealImageIndex(index);
     setHoveredImages({
-      set1: [false, false, false, false, false], 
-      set2: [false, false, false, false, false], 
-      set3: [false, false, false, false, false], 
+      set1: [false, false, false, false, false],
+      set2: [false, false, false, false, false],
+      set3: [false, false, false, false, false],
     });
   };
 
@@ -332,36 +332,36 @@ export default function MainPage() {
           <img className='image_x' src='/images/back.png' onClick={handleResetImage} alt='reset' />
         </div>
         <p id='main_text' style={{ color: '#515151' }} >※ 수조 데이터를 실시간으로 조회하고 싶다면 고객문의로 문의 바랍니다.</p>
-        
+
         <div className='circle_buttons'>
           {currentImageSet === null && (
             <>
-            <img
-              className='image_m_1'
-              src={hoveredImages['set1'][0] ? '/images/hat.png' : fishIconSrc}
-              onMouseOver={() => handleFishIconMouseOver('set1', 0)}
-              onMouseOut={() => handleFishIconMouseOut('set1', 0)}
-              onClick={() => handleImageSetChange('set1')}
-              alt='set1'
-            />
-            <img
-              className='image_m_2'
-              src={hoveredImages['set2'][0] ? '/images/A.png' : fishIconSrc}
-              onMouseOver={() => handleFishIconMouseOver('set2', 0)}
-              onMouseOut={() => handleFishIconMouseOut('set2', 0)}
-              onClick={() => handleImageSetChange('set2')}
-              alt='set2'
-            />
-            <img
-              className='image_m_3'
-              src={hoveredImages['set3'][0] ? '/images/B.png' : fishIconSrc}
-              onMouseOver={() => handleFishIconMouseOver('set3', 0)}
-              onMouseOut={() => handleFishIconMouseOut('set3', 0)}
-              onClick={() => handleImageSetChange('set3')}
-              alt='set3'
-            />
-          </>
-          
+              <img
+                className='image_m_1'
+                src={hoveredImages['set1'][0] ? '/images/hat.png' : fishIconSrc}
+                onMouseOver={() => handleFishIconMouseOver('set1', 0)}
+                onMouseOut={() => handleFishIconMouseOut('set1', 0)}
+                onClick={() => handleImageSetChange('set1')}
+                alt='set1'
+              />
+              <img
+                className='image_m_2'
+                src={hoveredImages['set2'][0] ? '/images/A.png' : fishIconSrc}
+                onMouseOver={() => handleFishIconMouseOver('set2', 0)}
+                onMouseOut={() => handleFishIconMouseOut('set2', 0)}
+                onClick={() => handleImageSetChange('set2')}
+                alt='set2'
+              />
+              <img
+                className='image_m_3'
+                src={hoveredImages['set3'][0] ? '/images/B.png' : fishIconSrc}
+                onMouseOver={() => handleFishIconMouseOver('set3', 0)}
+                onMouseOut={() => handleFishIconMouseOut('set3', 0)}
+                onClick={() => handleImageSetChange('set3')}
+                alt='set3'
+              />
+            </>
+
           )}
 
           {currentImageSet === 'set1' && (
@@ -505,11 +505,11 @@ export default function MainPage() {
 
         <Modal isOpen={isOpen} onRequestClose={closeModal} style={customStyles}>
           <button className='modal_x' onClick={closeModal}>X</button>
-          <hr style={{ marginTop: '10px', width: '100%', marginLeft: '0px', marginRight: '0px' }} />
+          <hr style={{ marginTop: '10px', width: '99%', marginLeft: '0px', marginRight: '0px' }} />
           <DashPlayer url="https://dash.akamaized.net/akamai/bbb_30fps/bbb_30fps.mpd" />
           <p id='ov_text' style={{ color: '#515151' }} >※ 현재 실시간 데이터 및 영상을 30초 동안 조회할 수 있습니다. 더 자세한 데이터를 원하신다면 고객문의에서 문의해주시길 바랍니다.</p>
 
-          <div className='graph_view' style={{ height: '600px', width: '700px', marginTop: '-600px', marginLeft: '650px', marginRight: '0px' }}>
+          <div className='graph_view' style={{ height: '600px', width: '700px', marginTop: '-600px', marginLeft: '700px', marginRight: '0px' }}>
             <ul className='modal_menu' >
               <li>
                 <button className={`modal_menu_bt ${selectedGraphData === 'do' ? 'active' : ''}`} onClick={() => handleGraphDataChange('do')}>DO</button>
@@ -531,9 +531,9 @@ export default function MainPage() {
 
       <footer>
         <div id='footer_img'>
-          <img src='images/footer1.png' style={{ width:'80px', height:'40px' }} />
-          <img src='images/footer2.png' style={{ width:'50px', height:'40px' }} />
-          <img src='images/footer3.png' style={{ width:'130px', height:'40px' }} />
+          <img src='images/footer1.png' style={{ width: '50px', height: '40px' }} />
+          <img src='images/footer2.png' style={{ width: '130px', height: '40px' }} />
+          <img src='images/footer3.png' style={{ width: '80px', height: '40px' }} />
         </div>
         <address>
           <p>스페셜러스</p>

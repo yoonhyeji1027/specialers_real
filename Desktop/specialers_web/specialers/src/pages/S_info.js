@@ -1,14 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "./S_info.css";
 import Header from './Header.js';
 
 export default function S_info() {
+
+  const gallery = [
+    '/images/gallery1.jpg',
+    '/images/gallery2.jpg',
+    '/images/gallery3.jpg',
+    '/images/gallery4.jpg'
+  ];
+
+  const [currentImageSet, setCurrentImageSet] = useState(null);
+  const [currentRealImageIndex, setCurrentRealImageIndex] = useState(0);
+
+  const handlePrevImage = () => {
+    setCurrentRealImageIndex((prevIndex) => (prevIndex - 1 + gallery.length) % gallery.length);
+  };
+
+  const handleNextImage = () => {
+    setCurrentRealImageIndex((prevIndex) => (prevIndex + 1) % gallery.length);
+  };
+
   return (
     <div>
       <Header />
 
-      <div className='image_s'> {/*회사 사진 */}
-        <img src="images/specialers.jpg" width="611px" height="818px" alt="imsi_s" />
+      <div className='gallery'>
+        <video className='gallery_video' width='700px' height='700px' controls='controls' autoPlay muted playsInline style={{ marginRight: '120px', marginLeft: '120px' }} >
+          <source src='images/gallery_video.mp4' type='video/mp4'></source>
+        </video>
+        <img className='gallery_prev' src='/images/prev.png' width='40px' height='60px' onClick={handlePrevImage} />
+        <img className='gallery_img' src={gallery[currentRealImageIndex]} width='600px' height='600px' />
+        <img className='gallery_next' src='/images/next.png' width='40px' height='60px' onClick={handleNextImage} />
       </div>
 
       <div className="hello" > {/*인사말*/}
@@ -16,12 +40,12 @@ export default function S_info() {
           <h4 style={{ color: '#515151', fontSize: '28px', fontWeight: 400 }}>| 인사말</h4>
           <h3 style={{ color: '#4D606B', paddingBottom: '50px', fontSize: '35px' }}>SPECIALERS에 오신 것을 환영합니다.</h3>
           <p style={{ color: '#515151', fontSize: '25px' }}>
-            스마트양식업은 과거의 관행, 직감, 최선의 추축이 아닌<br />
+            스마트양식업은 과거의 관행, 직감, 최선의 추측이 아닌
             경험적 데이터와 분석기반의 운영으로 변화하고 있습니다.<br />
-            당사는 실시간 데이터 분석과 양식장 모니터링이 가능한<br />
+            당사는 실시간 데이터 분석과 양식장 모니터링이 가능한
             스마트양식 인텔리전스 솔루션을 통해 양식장을 관리하여<br />
-            패사율을 줄이고 비용을 절약하여 효율적인 기술을 제공하고자 합니다.<br />
-            SPECIALERS는 앞으로 변화에 역동적으로 대처하고,<br />
+            폐사율을 줄이고 비용을 절약하여 효율적인 기술을 제공하고자 합니다.<br />
+            SPECIALERS는 앞으로 변화에 역동적으로 대처하고,
             고객과 함께 성장해 나가는 최고의 파트너가 되겠습니다.
           </p>
           <p style={{ color: '#515151', fontSize: '25px' }}>감사합니다.</p>
@@ -57,9 +81,9 @@ export default function S_info() {
 
       <footer>
         <div id='footer_img'>
-          <img src='images/footer1.png' style={{ width: '80px', height: '40px' }} />
-          <img src='images/footer2.png' style={{ width: '50px', height: '40px' }} />
-          <img src='images/footer3.png' style={{ width: '130px', height: '40px' }} />
+          <img src='images/footer1.png' style={{ width: '50px', height: '40px' }} />
+          <img src='images/footer2.png' style={{ width: '130px', height: '40px' }} />
+          <img src='images/footer3.png' style={{ width: '80px', height: '40px' }} />
         </div>
         <address>
           <p>스페셜러스</p>
@@ -70,4 +94,3 @@ export default function S_info() {
     </div>
   );
 }
-
