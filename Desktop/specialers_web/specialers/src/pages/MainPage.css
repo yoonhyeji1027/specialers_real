@@ -182,8 +182,29 @@ address p{
 }
 .image_m1_5{
     position:absolute;
-    margin-top: -550px;
-    margin-left: -200px;
+    margin-top: -440px;
+    margin-left: -210px;
+    width: 40px;
+    height: 40px;
+}
+.image_m1_6{
+    position:absolute;
+    margin-top: -500px;
+    margin-left: -490px;
+    width: 40px;
+    height: 40px;
+}
+.image_m1_7{
+    position:absolute;
+    margin-top: -400px;
+    margin-left: -530px;
+    width: 40px;
+    height: 40px;
+}
+.image_m1_8{
+    position:absolute;
+    margin-top: -615px;
+    margin-left: -290px;
     width: 40px;
     height: 40px;
 }
@@ -264,4 +285,43 @@ address p{
 .image_m_2:hover, .image_m_3:hover{
     width: 110px;
     height: 70px;
+}
+.image_m1_1:hover{
+    width: 160px;
+}
+.image_m1_2:hover{
+    width: 100px;
+}
+.image_m1_3:hover{
+    width: 170px;
+}
+.image_m1_4:hover{
+    width: 170px;
+}
+.image_m1_5:hover{
+    width: 170px;
+}
+.image_m1_6:hover{
+    width: 60px;
+}
+.image_m1_7:hover{
+    width: 100px;
+}
+.image_m1_8:hover{
+    width: 80px;
+}
+.image_m2_1:hover{
+    width: 100px;
+}
+.image_m2_2:hover, .image_m3_1:hover, .image_m3_2:hover, .image_m3_3:hover{
+    width: 120px;
+}
+.image_m2_3:hover{
+    width: 130px;
+}
+.image_m2_4:hover, .image_m3_4:hover{
+    width: 60px;
+}
+.image_m2_5:hover, .image_m3_5:hover{
+    width: 100px;
 }

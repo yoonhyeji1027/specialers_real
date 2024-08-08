@@ -27,7 +27,7 @@ export default function S_info() {
       <Header />
 
       <div className='gallery'>
-        <video className='gallery_video' width='700px' height='700px' controls='controls' autoPlay muted playsInline style={{ marginRight: '120px', marginLeft: '120px' }} >
+        <video className='gallery_video' width='600px' height='600px' controls='controls' autoPlay muted playsInline style={{ marginRight: '120px', marginLeft: '200px' }} >
           <source src='images/gallery_video.mp4' type='video/mp4'></source>
         </video>
         <img className='gallery_prev' src='/images/prev.png' width='40px' height='60px' onClick={handlePrevImage} />

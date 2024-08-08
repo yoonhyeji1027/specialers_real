@@ -165,6 +165,7 @@ export default function MainPage() {
     setSelectedGraphData(dataType);
   };
 
+ //여기부터 메인 이미지 함수
   const fishIconImg = '/images/fish_icon.png';
   const fishIconHoverImg = '/images/fish_icon_hover.png';
 
@@ -172,7 +173,7 @@ export default function MainPage() {
 
   const fishIconHoverSrc = '/images/fish_icon_hover.png';
   const [hoveredImages, setHoveredImages] = useState({
-    set1: [false, false, false, false, false],
+    set1: [false, false, false, false, false, false, false, false],
     set2: [false, false, false, false, false],
     set3: [false, false, false, false, false],
   });
@@ -193,7 +194,7 @@ export default function MainPage() {
     setCurrentImageSet(set);
     setCurrentRealImageIndex(0);
     setHoveredImages({
-      set1: [false, false, false, false, false],
+      set1: [false, false, false, false, false, false, false, false],
       set2: [false, false, false, false, false],
       set3: [false, false, false, false, false],
     });
@@ -203,7 +204,7 @@ export default function MainPage() {
     setCurrentImageSet(null);
     setCurrentRealImageIndex(0);
     setHoveredImages({
-      set1: [false, false, false, false, false],
+      set1: [false, false, false, false, false, false, false, false],
       set2: [false, false, false, false, false],
       set3: [false, false, false, false, false],
     });
@@ -217,7 +218,7 @@ export default function MainPage() {
 
     setCurrentRealImageIndex((prevIndex) => (prevIndex + 1) % realImages.length);
     setHoveredImages({
-      set1: [false, false, false, false, false],
+      set1: [false, false, false, false, false, false, false, false],
       set2: [false, false, false, false, false],
       set3: [false, false, false, false, false],
     });
@@ -231,7 +232,7 @@ export default function MainPage() {
 
     setCurrentRealImageIndex((prevIndex) => (prevIndex - 1 + realImages.length) % realImages.length);
     setHoveredImages({
-      set1: [false, false, false, false, false],
+      set1: [false, false, false, false, false, false, false, false],
       set2: [false, false, false, false, false],
       set3: [false, false, false, false, false],
     });
@@ -241,31 +242,34 @@ export default function MainPage() {
     setCurrentImageSet(setImageSet);
     setCurrentRealImageIndex(index);
     setHoveredImages({
-      set1: [false, false, false, false, false],
+      set1: [false, false, false, false, false, false, false, false],
       set2: [false, false, false, false, false],
       set3: [false, false, false, false, false],
     });
   };
 
   const realImages1 = [
-    '/images/real_image1_1.png',
+    '/images/nan.mp4',
     '/images/real_image1_2.png',
     '/images/real_image1_3.png',
     '/images/real_image1_4.png',
+    '/images/real_image1_1.png',
+    '/images/ja.mp4',
+    '/images/bal.png',
     '/images/real_image1_5.png'
   ];
   const realImages2 = [
     '/images/real_image2_1.png',
     '/images/real_image2_2.png',
     '/images/real_image2_3.png',
-    '/images/real_image2_4.png',
+    '/images/sang.mp4',
     '/images/real_image2_5.png'
   ];
   const realImages3 = [
     '/images/real_image3_1.png',
     '/images/real_image3_2.png',
     '/images/real_image3_3.png',
-    '/images/real_image3_4.png',
+    '/images/sang.mp4',
     '/images/real_image3_5.png'
   ];
 
@@ -368,7 +372,7 @@ export default function MainPage() {
             <>
               <img
                 className='image_m1_1'
-                src={hoveredImages['set1'][0] ? fishIconHoverSrc : fishIconSrc}
+                src={hoveredImages['set1'][0] ? '/images/hat_1.png' : fishIconSrc}
                 onMouseOver={() => handleFishIconMouseOver('set1', 0)}
                 onMouseOut={() => handleFishIconMouseOut('set1', 0)}
                 onClick={() => handleSpecificImageClick('set1', 0)}
@@ -376,7 +380,7 @@ export default function MainPage() {
               />
               <img
                 className='image_m1_2'
-                src={hoveredImages['set1'][1] ? fishIconHoverSrc : fishIconSrc}
+                src={hoveredImages['set1'][1] ? '/images/hat_6.png' : fishIconSrc}
                 onMouseOver={() => handleFishIconMouseOver('set1', 1)}
                 onMouseOut={() => handleFishIconMouseOut('set1', 1)}
                 onClick={() => handleSpecificImageClick('set1', 1)}
@@ -384,7 +388,7 @@ export default function MainPage() {
               />
               <img
                 className='image_m1_3'
-                src={hoveredImages['set1'][2] ? fishIconHoverSrc : fishIconSrc}
+                src={hoveredImages['set1'][2] ? '/images/hat_5.png' : fishIconSrc}
                 onMouseOver={() => handleFishIconMouseOver('set1', 2)}
                 onMouseOut={() => handleFishIconMouseOut('set1', 2)}
                 onClick={() => handleSpecificImageClick('set1', 2)}
@@ -392,7 +396,7 @@ export default function MainPage() {
               />
               <img
                 className='image_m1_4'
-                src={hoveredImages['set1'][3] ? fishIconHoverSrc : fishIconSrc}
+                src={hoveredImages['set1'][3] ? '/images/hat_4.png' : fishIconSrc}
                 onMouseOver={() => handleFishIconMouseOver('set1', 3)}
                 onMouseOut={() => handleFishIconMouseOut('set1', 3)}
                 onClick={() => handleSpecificImageClick('set1', 3)}
@@ -400,11 +404,35 @@ export default function MainPage() {
               />
               <img
                 className='image_m1_5'
-                src={hoveredImages['set1'][4] ? fishIconHoverSrc : fishIconSrc}
+                src={hoveredImages['set1'][4] ? '/images/hat_8.png' : fishIconSrc}
                 onMouseOver={() => handleFishIconMouseOver('set1', 4)}
                 onMouseOut={() => handleFishIconMouseOut('set1', 4)}
                 onClick={() => handleSpecificImageClick('set1', 4)}
                 alt='set1_4'
+              />
+              <img
+                className='image_m1_6'
+                src={hoveredImages['set1'][5] ? '/images/hat_2.png' : fishIconSrc}
+                onMouseOver={() => handleFishIconMouseOver('set1', 5)}
+                onMouseOut={() => handleFishIconMouseOut('set1', 5)}
+                onClick={() => handleSpecificImageClick('set1', 5)}
+                alt='set1_5'
+              />
+              <img
+                className='image_m1_7'
+                src={hoveredImages['set1'][6] ? '/images/hat_3.png' : fishIconSrc}
+                onMouseOver={() => handleFishIconMouseOver('set1', 6)}
+                onMouseOut={() => handleFishIconMouseOut('set1', 6)}
+                onClick={() => handleSpecificImageClick('set1', 6)}
+                alt='set1_6'
+              />
+              <img
+                className='image_m1_8'
+                src={hoveredImages['set1'][7] ? '/images/hat_7.png' : fishIconSrc}
+                onMouseOver={() => handleFishIconMouseOver('set1', 7)}
+                onMouseOut={() => handleFishIconMouseOut('set1', 7)}
+                onClick={() => handleSpecificImageClick('set1', 7)}
+                alt='set1_7'
               />
             </>
           )}
@@ -413,7 +441,7 @@ export default function MainPage() {
             <>
               <img
                 className='image_m2_1'
-                src={hoveredImages['set2'][0] ? fishIconHoverSrc : fishIconSrc}
+                src={hoveredImages['set2'][0] ? '/images/A_1.png' : fishIconSrc}
                 onMouseOver={() => handleFishIconMouseOver('set2', 0)}
                 onMouseOut={() => handleFishIconMouseOut('set2', 0)}
                 onClick={() => handleSpecificImageClick('set2', 0)}
@@ -421,7 +449,7 @@ export default function MainPage() {
               />
               <img
                 className='image_m2_2'
-                src={hoveredImages['set2'][1] ? fishIconHoverSrc : fishIconSrc}
+                src={hoveredImages['set2'][1] ? '/images/A_2.png' : fishIconSrc}
                 onMouseOver={() => handleFishIconMouseOver('set2', 1)}
                 onMouseOut={() => handleFishIconMouseOut('set2', 1)}
                 onClick={() => handleSpecificImageClick('set2', 1)}
@@ -429,7 +457,7 @@ export default function MainPage() {
               />
               <img
                 className='image_m2_3'
-                src={hoveredImages['set2'][2] ? fishIconHoverSrc : fishIconSrc}
+                src={hoveredImages['set2'][2] ? '/images/A_3.png' : fishIconSrc}
                 onMouseOver={() => handleFishIconMouseOver('set2', 2)}
                 onMouseOut={() => handleFishIconMouseOut('set2', 2)}
                 onClick={() => handleSpecificImageClick('set2', 2)}
@@ -437,7 +465,7 @@ export default function MainPage() {
               />
               <img
                 className='image_m2_4'
-                src={hoveredImages['set2'][3] ? fishIconHoverSrc : fishIconSrc}
+                src={hoveredImages['set2'][3] ? '/images/A_4.png' : fishIconSrc}
                 onMouseOver={() => handleFishIconMouseOver('set2', 3)}
                 onMouseOut={() => handleFishIconMouseOut('set2', 3)}
                 onClick={() => handleSpecificImageClick('set2', 3)}
@@ -445,7 +473,7 @@ export default function MainPage() {
               />
               <img
                 className='image_m2_5'
-                src={hoveredImages['set2'][4] ? fishIconHoverSrc : fishIconSrc}
+                src={hoveredImages['set2'][4] ? '/images/A_5.png' : fishIconSrc}
                 onMouseOver={() => handleFishIconMouseOver('set2', 4)}
                 onMouseOut={() => handleFishIconMouseOut('set2', 4)}
                 onClick={() => handleSpecificImageClick('set2', 4)}
@@ -458,7 +486,7 @@ export default function MainPage() {
             <>
               <img
                 className='image_m3_1'
-                src={hoveredImages['set3'][0] ? fishIconHoverSrc : fishIconSrc}
+                src={hoveredImages['set3'][0] ? '/images/B_1.png' : fishIconSrc}
                 onMouseOver={() => handleFishIconMouseOver('set3', 0)}
                 onMouseOut={() => handleFishIconMouseOut('set3', 0)}
                 onClick={() => handleSpecificImageClick('set3', 0)}
@@ -466,7 +494,7 @@ export default function MainPage() {
               />
               <img
                 className='image_m3_2'
-                src={hoveredImages['set3'][1] ? fishIconHoverSrc : fishIconSrc}
+                src={hoveredImages['set3'][1] ? '/images/B_2.png' : fishIconSrc}
                 onMouseOver={() => handleFishIconMouseOver('set3', 1)}
                 onMouseOut={() => handleFishIconMouseOut('set3', 1)}
                 onClick={() => handleSpecificImageClick('set3', 1)}
@@ -474,7 +502,7 @@ export default function MainPage() {
               />
               <img
                 className='image_m3_3'
-                src={hoveredImages['set3'][2] ? fishIconHoverSrc : fishIconSrc}
+                src={hoveredImages['set3'][2] ? '/images/B_3.png' : fishIconSrc}
                 onMouseOver={() => handleFishIconMouseOver('set3', 2)}
                 onMouseOut={() => handleFishIconMouseOut('set3', 2)}
                 onClick={() => handleSpecificImageClick('set3', 2)}
@@ -482,7 +510,7 @@ export default function MainPage() {
               />
               <img
                 className='image_m3_4'
-                src={hoveredImages['set3'][3] ? fishIconHoverSrc : fishIconSrc}
+                src={hoveredImages['set3'][3] ? '/images/B_4.png' : fishIconSrc}
                 onMouseOver={() => handleFishIconMouseOver('set3', 3)}
                 onMouseOut={() => handleFishIconMouseOut('set3', 3)}
                 onClick={() => handleSpecificImageClick('set3', 3)}
@@ -490,7 +518,7 @@ export default function MainPage() {
               />
               <img
                 className='image_m3_5'
-                src={hoveredImages['set3'][4] ? fishIconHoverSrc : fishIconSrc}
+                src={hoveredImages['set3'][4] ? '/images/B_5.png' : fishIconSrc}
                 onMouseOver={() => handleFishIconMouseOver('set3', 4)}
                 onMouseOut={() => handleFishIconMouseOut('set3', 4)}
                 onClick={() => handleSpecificImageClick('set3', 4)}
